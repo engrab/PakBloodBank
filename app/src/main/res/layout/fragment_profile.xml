@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?attr/backgroundColor"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardMaxElevation="@dimen/cardMaxElevation"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/view_donors_by_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:background="@drawable/button_round_add"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/view_all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_body_s_size"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/recentItemTitleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/recentItemTitleTextView" />
+
+
+                    <TextView
+                        android:id="@+id/recentItemTitleTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:gravity="start"
+                        android:text="@string/donors_added_by_you"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/cardTitleTextColor"
+                        android:textSize="18sp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toStartOf="@+id/view_donors_by_user"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--                app:layout_constraintTop_toBottomOf="@id/a_view" />-->
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_donors_by_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/space_8"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingEnd="@dimen/space_8"
+                        android:paddingRight="@dimen/space_8"
+                        android:paddingBottom="@dimen/space_8"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recentItemTitleTextView"
+                        app:spanCount="1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/featuredCityCardViewBig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardMaxElevation="@dimen/cardMaxElevation"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/view_requests_by_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:animateLayoutChanges="true"
+                        android:background="@drawable/button_round_add"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/view_all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_body_s_size"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/popularTitleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/popularTitleTextView"
+                        tools:text="@string/view_all" />
+
+                    <TextView
+                        android:id="@+id/popularTitleTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:animateLayoutChanges="true"
+                        android:gravity="start"
+                        android:text="@string/requests_added_by_you"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/cardTitleTextColor"
+                        android:textSize="@dimen/font_h7_size"
+                        app:layout_constraintEnd_toStartOf="@+id/view_requests_by_user"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_requests_by_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/space_8"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingEnd="@dimen/space_8"
+                        android:paddingRight="@dimen/space_8"
+                        android:paddingBottom="@dimen/space_8"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/popularTitleTextView"
+                        app:spanCount="1" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

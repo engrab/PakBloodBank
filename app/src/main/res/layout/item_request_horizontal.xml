@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="230dp"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="?attr/cardBackgroundColor"
+    app:cardCornerRadius="@dimen/space_4"
+    app:cardElevation="@dimen/cardElevation"
+    app:cardMaxElevation="@dimen/cardMaxElevation"
+    app:cardUseCompatPadding="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/requestBloodGroupText"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/circle_primary"
+            android:gravity="center"
+            android:text="AB+"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/requestDistanceConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/requestBloodGroupText"
+            app:layout_constraintTop_toTopOf="@+id/requestBloodGroupText">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="18dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/space_4"
+                android:layout_marginRight="@dimen/space_4"
+                android:tint="@color/md_grey_500"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/requestDistanceTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/distance_icon" />
+
+            <TextView
+                android:id="@+id/requestDistanceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="10 km"
+                android:textSize="@dimen/font_body_s_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/timeAgoText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="1 hour ago"
+            android:textColor="@color/md_grey_500"
+            android:textSize="@dimen/font_body_s_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/requestBloodGroupText"
+            app:layout_constraintTop_toBottomOf="@+id/requestDistanceConstraintLayout" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView12"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/space_4"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeAgoText">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/image_default__image"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_image" />
+
+                <TextView
+                    android:id="@+id/isSoldTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@color/global__primary_transparent"
+                    android:paddingStart="@dimen/space_8"
+                    android:paddingTop="@dimen/space_8"
+                    android:paddingEnd="@dimen/space_8"
+                    android:paddingBottom="@dimen/space_8"
+                    android:textColor="@color/md_white_1000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/requestNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="Shoaib Raza"
+            android:textColor="@color/text__primary_dark"
+            android:textSize="@dimen/font_title_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView12" />
+
+        <TextView
+            android:id="@+id/noOfBagsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="8 Bags"
+            android:textColor="@color/global__primary"
+            android:textSize="@dimen/font_body_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/requestNameText" />
+
+        <TextView
+            android:id="@+id/requestCityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:text="Lahore"
+            android:textColor="@color/md_blue_300"
+            android:textSize="@dimen/font_body_s_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/requestCountryTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Item type name"
+            android:textColor="@color/md_grey_500"
+            android:textSize="@dimen/font_body_s_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteImageView"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/donorPointsTextView"-->
+        <!--                    android:layout_width="0dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="8dp"-->
+        <!--                    android:layout_marginEnd="8dp"-->
+        <!--                    android:gravity="end"-->
+        <!--                    android:text="12 points"-->
+        <!--                    android:textColor="@color/md_blue_300"-->
+        <!--                    android:textSize="@dimen/font_body_s_size"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="@+id/noOfBagsTextView"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintHorizontal_bias="0.0"-->
+        <!--                    app:layout_constraintStart_toEndOf="@+id/noOfBagsTextView"-->
+        <!--                    app:layout_constraintTop_toTopOf="@+id/noOfBagsTextView" />-->
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/image_default__image"
+            android:tint="@color/md_grey_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noOfBagsTextView"
+            app:srcCompat="@drawable/ic_person_pin" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/image_default__image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:srcCompat="@drawable/circle_grey" />
+
+        <ImageView
+            android:id="@+id/favoriteImageView"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/ic_eye"
+            android:contentDescription="@string/image_default__image"
+            android:tint="@color/md_grey_500"
+            app:layout_constraintBottom_toBottomOf="@+id/requestCountryTextView"
+            app:layout_constraintEnd_toStartOf="@+id/requestViewsCountTextView"
+            app:layout_constraintTop_toTopOf="@+id/requestCountryTextView"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/requestViewsCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="10"
+            android:textColor="@color/md_grey_500"
+            android:textSize="@dimen/font_body_s_size"
+            app:layout_constraintBottom_toBottomOf="@+id/favoriteImageView"
+            app:layout_constraintEnd_toStartOf="@+id/more"
+            app:layout_constraintTop_toTopOf="@+id/favoriteImageView" />
+
+
+        <ImageButton
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/grey_40"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_more_vert" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

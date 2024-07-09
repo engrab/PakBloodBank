@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "860964969897",
+    "project_id": "pakbloodbank-c7b68",
+    "storage_bucket": "pakbloodbank-c7b68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860964969897:android:a38e930eab31f1ef45f8b8",
+        "android_client_info": {
+          "package_name": "com.pakbloodbank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_BvA7_ZKHqVMyC052CxwrTaqP8Jtyr0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

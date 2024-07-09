@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="Theme.BBTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black80</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="inputIconColor">@color/black80</item>
+        <item name="inputBackgroundColor">@color/md_grey_50</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="circleBackground">@color/md_grey_400</item>
+        <item name="inputTextColor">@color/black</item>
+        <item name="inputHintColor">@color/black80</item>
+        <item name="textColorHeading">@color/black</item>
+        <item name="splashText">@color/white</item>
+
+        <item name="backgroundColor">@color/md_grey_50</item>
+        <item name="colorBackground">@color/md_grey_50</item>
+        <item name="colorBackgroundRaw">@color/md_white_1000</item>
+
+        <item name="cardTitleTextColor">@color/black</item>
+        <item name="colorOnCardButton">@color/colorPrimary</item>
+        <item name="bottomNavigationBg">@color/white</item>
+        <item name="colorOnCardText">@color/colorOnCardTextLight</item>
+
+        <item name="places_autocomplete_prediction_primary_text_color">@color/black</item>
+        <item name="places_autocomplete_prediction_secondary_text_color">@color/black80</item>
+
+        <item name="places_autocomplete_search_hint_color">@color/places_autocomplete_search_hint_color_light</item>
+        <item name="places_autocomplete_search_text_color">@color/places_autocomplete_search_text_color_light</item>
+
+    </style>
+
+
+    <style name="Theme.BBTheme.NoActionBar" parent="Theme.BBTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.BBTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="Theme.BBTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+</resources>

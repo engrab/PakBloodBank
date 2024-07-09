@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SimpleArcLoader">
+
+        <attr name="arc_style" format="enum">
+            <enum name="simple_arc" value="0" />
+            <enum name="complete_arc" value="1" />
+        </attr>
+
+        <attr name="arc_margin" format="dimension"/>
+        <attr name="arc_thickness" format="dimension"/>
+
+        <attr name="arc_speed" format="enum">
+            <enum name="slow" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="fast" value="2" />
+        </attr>
+
+        <attr name="arc_colors" format="reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="SearchableSpinner">
+        <attr name="hintText" format="string"/>
+    </declare-styleable>
+
+
+    <attr name="colorBackground" format="color" />
+    <attr name="colorBackgroundRaw" format="color" />
+    <attr name="colorCardBackground" format="color" />
+
+    <attr name="colorPrimaryText" format="color" />
+    <attr name="colorSecondaryText" format="color" />
+
+    <attr name="app_color" format="color" />
+    <attr name="back_activity_color" format="color" />
+    <attr name="back_app_color" format="color" />
+
+    <attr name="inputIconColor" format="color" />
+    <attr name="inputBackgroundColor" format="color" />
+    <attr name="circleBackground" format="color" />
+    <attr name="inputTextColor" format="color" />
+    <attr name="inputHintColor" format="color" />
+    <attr name="textColorHeading" format="color" />
+    <attr name="splashText" format="color" />
+    <attr name="cardTitleTextColor" format="color" />
+    <attr name="textPrimaryColor" format="color" />
+    <attr name="colorOnCardButton" format="color" />
+    <attr name="colorOnCardText" format="color" />
+
+    <attr name="bottomNavigationBg" format="color" />
+    <attr name="places_autocomplete_prediction_primary_text_color" format="color" />
+    <attr name="places_autocomplete_prediction_secondary_text_color" format="color" />
+    <attr name="places_autocomplete_search_text_color" format="color" />
+    <attr name="places_autocomplete_search_hint_color" format="color" />
+
+
+
+</resources>

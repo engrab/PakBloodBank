@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorBackgroundRaw"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/global__primary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/donor_name"
+            android:layout_width="382dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Donor Name"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+            android:textColor="@color/white" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/call_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:srcCompat="@drawable/ic_call" />
+
+
+            <ImageView
+                android:id="@+id/bt_share"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:srcCompat="@drawable/ic_share" />
+
+            <ImageView
+                android:id="@+id/bt_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:srcCompat="@drawable/ic_cancel" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/blood_group"
+                                android:textColor="@color/md_grey_500"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+
+                            <TextView
+                                android:id="@+id/blood_group"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="AB+"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="22sp" />
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/donor_type"
+                                android:textColor="@color/md_grey_500"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/donor_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="FREE"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/distance"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/distance"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="0 km"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/mobile_number"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/donor_mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:text="+92 333 3333333"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="@dimen/_14sdp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+
+                        </RelativeLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/region_title"
+                                android:textColor="@color/md_grey_500"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+
+                            <TextView
+                                android:id="@+id/donor_city"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:text="from city"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/donor_state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:text="from state"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/donor_country"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:text="from country"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/points"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/donor_points"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="30"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="@dimen/_14sdp" />
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/views"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/donor_views"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="10"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/member_since"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/member_since"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="10th march 2018"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="@dimen/_11sdp" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/registered_by"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/registered_by"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="User/ Admin"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="@dimen/_14sdp" />
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:text="@string/last_donation_date"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="@color/md_grey_600" />
+
+                            <TextView
+                                android:id="@+id/last_donated_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="10th march 2018"
+                                android:textColor="?attr/colorOnCardText"
+                                android:textSize="@dimen/_11sdp" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/cardCornerRadius"
+                        app:cardElevation="@dimen/cardElevationClose"
+                        app:cardMaxElevation="@dimen/cardMaxElevationClose"
+                        app:cardUseCompatPadding="true">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="3dp"
+                                    android:text="@string/habits"
+                                    android:textSize="@dimen/_9sdp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:background="@color/md_grey_600" />
+
+                                <TextView
+                                    android:id="@+id/donor_habits"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:minHeight="@dimen/_30sdp"
+                                    android:text="playing, study"
+                                    android:textColor="?attr/colorOnCardText"
+                                    android:textSize="@dimen/_14sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="3dp"
+                                    android:text="@string/address"
+                                    android:textSize="@dimen/_9sdp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:background="@color/md_grey_600" />
+
+                                <TextView
+                                    android:id="@+id/donor_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:minHeight="@dimen/_30sdp"
+                                    android:text="P#40 St#3 GM Abad Faisalabad Pakistan"
+                                    android:textColor="?attr/colorOnCardText"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/locate_in_google_maps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/button_round_primary"
+                        android:elevation="5dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:text="@string/locate"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

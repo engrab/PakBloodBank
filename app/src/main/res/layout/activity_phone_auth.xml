@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context="com.pakbloodbank.activities.LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <!--    <ImageView-->
+        <!--        android:id="@+id/imageView2"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:scaleType="centerCrop"-->
+        <!--        android:src="@drawable/signin_bg" />-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:padding="5dp"
+            app:cardCornerRadius="@dimen/cardCornerRadius"
+            app:cardElevation="@dimen/cardElevation"
+            app:cardMaxElevation="@dimen/cardMaxElevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+
+                <TextView
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="cursive"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <View
+                    android:id="@+id/view333"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_line" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/login_register"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="@dimen/_15sdp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:text="@string/verify_yourself"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="?attr/colorSecondaryVariant" />
+
+                <TextView
+                    android:id="@+id/detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorSecondaryVariant"
+                    tools:text="" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_edit_text_background"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        app:ccpDialog_keyboardAutoPopup="false"
+                        app:ccpDialog_textColor="?attr/inputTextColor"
+                        app:ccp_contentColor="?attr/inputTextColor"
+                        app:ccp_countryPreference="pk"
+                        app:ccp_defaultPhoneCode="92"
+                        app:ccp_textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fieldPhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/mobile_number"
+                            android:inputType="phone"
+                            android:maxLength="15"
+                            android:maxLines="1"
+                            android:paddingStart="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="8dp"
+                            android:paddingRight="8dp"
+                            android:paddingBottom="10dp"
+                            android:singleLine="true"
+                            android:textColor="?attr/inputTextColor"
+                            android:textColorHint="?attr/inputHintColor" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/signedInButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        android:visibility="visible">
+
+                        <Button
+                            android:id="@+id/signOutButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="@string/change_number"
+                            android:textAllCaps="false" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/signedInButtonsStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        android:visibility="visible">
+
+                        <Button
+                            android:id="@+id/buttonStartVerification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="@string/send_code"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/afterCodeSentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--                        <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginTop="8dp"-->
+                    <!--                            -->
+                    <!--                            android:hint="@string/verification_code">-->
+
+                    <EditText
+                        android:id="@+id/fieldVerificationCode_old"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginTop="10dp"
+                        android:autofillHints=""
+
+                        android:enabled="false"
+                        android:hint="@string/verification_code"
+                        android:inputType="number"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/md_black_1000"
+                        android:textColorHint="@color/md_grey_500"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+                    <!--                        <EditText-->
+                    <!--                            android:id="@+id/fieldVerificationCode"-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            -->
+                    <!--                            android:hint="@string/verification_code"-->
+                    <!--                            android:inputType="number"-->
+                    <!--                            android:maxLength="50"-->
+                    <!--                            android:maxLines="1"-->
+                    <!--                            android:paddingLeft="10dp"-->
+                    <!--                            android:singleLine="true"-->
+                    <!--                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"-->
+                    <!--                            android:textColor="@color/colorPrimary"-->
+                    <!--                            android:paddingStart="10dp" />-->
+
+                    <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <LinearLayout
+                        android:id="@+id/llverification_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/fieldVerificationCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:background="@drawable/round_edit_text_background"
+                            android:enabled="false"
+                            android:hint="@string/verification_code"
+                            android:inputType="number"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:singleLine="true"
+                            android:textColor="?attr/inputTextColor"
+                            android:textColorHint="?attr/inputHintColor"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0">
+
+                        <Button
+                            android:id="@+id/buttonVerifyPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1.0"
+                            android:text="@string/verify"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/buttonResend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1.0"
+                            android:text="@string/resend_code"
+                            android:textAllCaps="false" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_line" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/or"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_line" />
+
+
+                </LinearLayout>
+
+
+                <!--                <com.facebook.login.widget.LoginButton-->
+                <!--                    android:id="@+id/login_button"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:visibility="gone" />-->
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/fb_login_button"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="@dimen/_35sdp"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:background="@drawable/round_edittext_background"-->
+                <!--                    android:drawableStart="@drawable/facebook"-->
+                <!--                    android:drawableLeft="@drawable/facebook"-->
+                <!--                    android:paddingStart="10dp"-->
+                <!--                    android:paddingLeft="10dp"-->
+                <!--                    android:text="Continue With Facebook"-->
+                <!--                    android:textAllCaps="false" />-->
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/googleSignInButton"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="@dimen/_35sdp"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:layout_marginBottom="16dp"-->
+                <!--                    android:background="@drawable/round_edittext_background"-->
+                <!--                    android:drawableStart="@drawable/google"-->
+                <!--                    android:drawableLeft="@drawable/google"-->
+                <!--                    android:paddingStart="10dp"-->
+                <!--                    android:paddingLeft="10dp"-->
+                <!--                    android:text="Continue With Google"-->
+                <!--                    android:textAllCaps="false" />-->
+
+                <!--                <com.google.android.gms.common.SignInButton-->
+                <!--                    android:id="@+id/originalGoogleSignInButton"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:foreground="?android:attr/selectableItemBackground"-->
+                <!--                    android:visibility="gone" />-->
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/disconnectButton"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:background="@drawable/round_edittext_background"-->
+                <!--                    android:drawableStart="@drawable/google"-->
+                <!--                    android:drawableLeft="@drawable/google"-->
+                <!--                    android:paddingStart="10dp"-->
+                <!--                    android:paddingLeft="10dp"-->
+                <!--                    android:text="Signout / Disconnect"-->
+                <!--                    android:textAllCaps="false"-->
+                <!--                    android:visibility="gone" />-->
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+</ScrollView>

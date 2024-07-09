@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+
+    <style name="Base.BBTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorButtonNormal">@color/global__primary</item>
+        <item name="colorPrimary">@color/global__primary</item>
+        <item name="colorPrimaryDark">@color/global__primary_dark</item>
+        <item name="colorAccent">@color/global__accent</item>
+        <item name="android:windowBackground">@color/layout__primary_background</item>
+        <item name="drawerArrowStyle">@style/MyDrawerArrowToggle</item>
+        <item name="colorControlNormal">@color/global__accent</item>
+        <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
+
+    </style>
+
+    <!-- For main menu icon color -->
+    <style name="MyDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/text__white</item>
+        <item name="actionMenuTextColor">@color/text__white</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <!--<item name="background">@drawable/bg_action_bar</item>-->
+        <!--<item name="titleTextStyle">@style/MyActionBarTitleText</item>-->
+        <item name="actionMenuTextColor">@color/text__white</item>
+        <!--<item name="actionOverflowButtonStyle">@style/MyActionButtonOverFlow</item>-->
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/global__primary</item>
+        <item name="colorPrimaryDark">@color/global__primary_dark</item>
+        <item name="colorAccent">@color/global__accent</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/global__primary</item>
+        <item name="colorPrimaryDark">@color/global__primary_dark</item>
+        <item name="colorAccent">@color/global__accent</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

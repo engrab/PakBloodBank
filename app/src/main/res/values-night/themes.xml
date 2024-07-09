@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="Theme.BBTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#383838</item>
+        <item name="colorPrimaryVariant">#0C0C0C</item>
+<!--        <item name="colorPrimaryVariant">@color/black</item>-->
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/grey_3</item>
+        <item name="colorSecondaryVariant">@color/grey_20</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="inputIconColor">@color/white80</item>
+        <item name="inputBackgroundColor">@color/md_grey_900</item>
+        <item name="cardBackgroundColor">@color/md_grey_900</item>
+        <item name="circleBackground">@color/md_grey_500</item>
+        <item name="inputTextColor">@color/white</item>
+        <item name="inputHintColor">@color/white80</item>
+        <item name="textColorHeading">@color/white</item>
+        <item name="splashText">@color/white</item>
+
+        <item name="backgroundColor">#1E1A1A</item>
+        <item name="colorBackground">#171313</item>
+        <item name="colorBackgroundRaw">#1C1717</item>
+
+
+        <item name="cardTitleTextColor">@color/white</item>
+        <item name="colorOnCardButton">@color/white</item>
+
+        <item name="bottomNavigationBg">@color/black</item>
+
+        <item name="colorOnCardText">@color/colorOnCardTextNight</item>
+
+        <item name="places_autocomplete_prediction_primary_text_color">@color/white</item>
+        <item name="places_autocomplete_prediction_secondary_text_color">@color/white80</item>
+
+        <item name="places_autocomplete_search_hint_color">@color/places_autocomplete_search_hint_color_dark</item>
+        <item name="places_autocomplete_search_text_color">@color/places_autocomplete_search_text_color_dark</item>
+
+
+    </style>
+
+</resources>

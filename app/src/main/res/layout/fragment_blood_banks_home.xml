@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+            <RelativeLayout
+                android:id="@+id/adMobView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardMaxElevation="@dimen/cardMaxElevation"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/view_recent_blood_banks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:background="@drawable/button_round_add"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/view_all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_body_s_size"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/recentItemTitleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/recentItemTitleTextView" />
+
+                    <TextView
+                        android:id="@+id/recentItemTitleTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="start"
+                        android:text="@string/recent_blood_banks"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/cardTitleTextColor"
+                        android:textSize="18sp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toStartOf="@+id/view_recent_blood_banks"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--                app:layout_constraintTop_toBottomOf="@id/a_view" />-->
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_recent_blood_banks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/space_8"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingBottom="@dimen/space_8"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recentItemTitleTextView"
+                        app:spanCount="1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/featuredCityCardViewBig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardMaxElevation="@dimen/cardMaxElevation"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/view_popular_blood_banks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:animateLayoutChanges="true"
+                        android:background="@drawable/button_round_add"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/view_all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_body_s_size"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/popularTitleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/popularTitleTextView"
+                        tools:text="@string/view_all" />
+
+                    <TextView
+                        android:id="@+id/popularTitleTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:animateLayoutChanges="true"
+                        android:gravity="start"
+                        android:text="@string/popular_blood_banks"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/cardTitleTextColor"
+                        android:textSize="@dimen/font_h7_size"
+                        app:layout_constraintEnd_toStartOf="@+id/view_popular_blood_banks"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_popular_blood_banks"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/space_8"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingBottom="@dimen/space_8"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/popularTitleTextView"
+                        app:spanCount="1" />
+                    <!--<TextView-->
+                    <!--android:id="@+id/textview16"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginEnd="16dp"-->
+                    <!--android:text="Dashboard"-->
+                    <!--android:textColor="@color/text__primary"-->
+                    <!--android:textSize="@dimen/font_body_size"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/popularTitleTextView" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/featured2CityCardViewBig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardMaxElevation="@dimen/cardMaxElevation"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/view_nearby_blood_banks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:animateLayoutChanges="true"
+                        android:background="@drawable/button_round_add"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/view_all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_body_s_size"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/nearbyTitleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/nearbyTitleTextView"
+                        tools:text="@string/view_all" />
+
+                    <TextView
+                        android:id="@+id/nearbyTitleTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:animateLayoutChanges="true"
+                        android:gravity="start"
+                        android:text="@string/nearby_blood_banks"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/cardTitleTextColor"
+                        android:textSize="@dimen/font_h7_size"
+                        app:layout_constraintEnd_toStartOf="@+id/view_nearby_blood_banks"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_nearby_blood_banks"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/space_8"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingEnd="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingBottom="@dimen/space_8"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nearbyTitleTextView"
+                        app:spanCount="1" />
+                    <!--<TextView-->
+                    <!--android:id="@+id/textview16"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginEnd="16dp"-->
+                    <!--android:text="Dashboard"-->
+                    <!--android:textColor="@color/text__primary"-->
+                    <!--android:textSize="@dimen/font_body_size"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/popularTitleTextView" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/adMobView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!--            <com.google.android.material.card.MaterialCardView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:visibility="visible">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content">-->
+
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/blogTitleTextView"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="16dp"-->
+            <!--                        android:layout_marginLeft="16dp"-->
+            <!--                        android:layout_marginTop="16dp"-->
+            <!--                        android:layout_marginEnd="8dp"-->
+            <!--                        android:layout_marginRight="8dp"-->
+            <!--                        android:animateLayoutChanges="true"-->
+            <!--                        android:gravity="start"-->
+            <!--                        android:text="Blog"-->
+            <!--                        android:textAlignment="viewStart"-->
+            <!--                        android:textColor="?attr/cardTitleTextColor"-->
+            <!--                        android:textSize="@dimen/font_h7_size"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/blogViewAllTextView"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.0"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/blogViewAllTextView"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="0dp"-->
+            <!--                        android:layout_marginEnd="@dimen/space_8"-->
+            <!--                        android:layout_marginRight="@dimen/space_8"-->
+            <!--                        android:animateLayoutChanges="true"-->
+            <!--                        android:gravity="center"-->
+            <!--                        android:text="@string/view_all"-->
+            <!--                        android:textAllCaps="true"-->
+            <!--                        android:background="@drawable/button_round_add"
+                                    android:paddingStart="10dp"
+                                    android:paddingLeft="10dp"
+                                    android:paddingEnd="10dp"
+                                    android:paddingRight="10dp"
+                                    android:textColor="@color/white"-->
+            <!--                        android:textSize="@dimen/font_body_s_size"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/blogTitleTextView"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/blogTitleTextView"-->
+            <!--                        tools:text="@string/view_all" />-->
+
+            <!--                    <androidx.viewpager.widget.ViewPager-->
+            <!--                        android:id="@+id/blogViewPager"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="250dp"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.0"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/blogTitleTextView" />-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="70dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent" />-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:id="@+id/pagerIndicator"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_alignParentStart="true"-->
+            <!--                        android:layout_alignParentLeft="true"-->
+            <!--                        android:layout_alignParentEnd="true"-->
+            <!--                        android:layout_alignParentRight="true"-->
+            <!--                        android:layout_alignParentBottom="true"-->
+            <!--                        android:layout_centerHorizontal="true"-->
+            <!--                        android:layout_marginStart="8dp"-->
+            <!--                        android:layout_marginEnd="8dp"-->
+            <!--                        android:layout_marginBottom="8dp"-->
+            <!--                        android:gravity="center"-->
+            <!--                        android:orientation="horizontal"-->
+            <!--                        android:paddingStart="@dimen/space_4"-->
+            <!--                        android:paddingTop="@dimen/space_4"-->
+            <!--                        android:paddingEnd="@dimen/space_4"-->
+            <!--                        android:paddingBottom="@dimen/space_4"-->
+            <!--                        android:scaleType="fitXY"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/blogViewPager"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.498"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </com.google.android.material.card.MaterialCardView>-->
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,158 @@
+//apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+android {
+    compileSdkVersion 34
+    namespace 'com.pakbloodbank'
+    buildToolsVersion "34.0.0"
+
+    defaultConfig {
+        applicationId "com.pakbloodbank"
+       // minSdkVersion 19
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        manifestPlaceholders = [onesignal_app_id               : "28def764-53e7-4136-96f5-75828fd8b568",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
+
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+//            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+//            applicationVariants.all { variant ->
+//                variant.outputs.all {
+//                    outputFileName = "${applicationName}_${variant.buildType.name}_${defaultConfig.versionName}.apk"
+//                }
+//            }
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            applicationVariants.all { variant ->
+//                variant.outputs.all {
+//                    outputFileName = "${applicationName}_${variant.buildType.name}_${defaultConfig.versionName}.apk"
+//                }
+//            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.7'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    implementation 'com.google.android.libraries.places:places:3.5.0' // for future upgrade
+//    implementation 'com.google.android.libraries.places:places-compat:2.4.0'
+
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-auth:23.0.0'
+
+//    implementation platform('com.google.firebase:firebase-bom:26.1.1')
+//    implementation 'com.google.firebase:firebase-auth'
+
+
+    implementation 'com.hbb20:ccp:2.7.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+//    implementation 'com.onesignal:OneSignal:3.13.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
+
+
+    //implementation 'com.onesignal:OneSignal:5.0.0-beta4'
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+
+
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.1.1'
+
+    implementation 'com.google.android.ads.consent:consent-library:1.0.8'
+
+
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.infideap.drawerbehavior:drawer-behavior:0.1.5'
+    implementation 'com.karumi:dexter:6.2.3'
+
+    implementation 'com.github.Jay-Goo:RangeSeekBar:v3.0.0'
+
+//    for image loading
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    implementation 'androidx.activity:activity:1.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+
+    // for all screens designing
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+    // for multi lang
+    implementation "com.github.YarikSOffice:lingver:1.2.2"
+
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+
+    // Recommended: Add the Firebase SDK for Firebase Crashlytics.
+   implementation 'com.google.firebase:firebase-crashlytics:19.0.2'
+
+//    implementation("com.google.firebase:firebase-crashlytics")
+//    implementation("com.google.firebase:firebase-analytics")
+
+    //new extra dependency
+
+    //implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
+
+//    implementation 'androidx.work:work-runtime-ktx:2.8.1'
+
+
+
+
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.6.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    //implementation 'com.google.firebase:firebase-appindexing:20.0.0'
+
+    //implementation 'com.google.firebase:firebase-sessions:15.0.2'
+    // Replace with the desired version
+
+
+    // firbaseui authentication
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    // required to avoid crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+
+}
+
+
+
+

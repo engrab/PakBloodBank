@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_donors_home"
+        android:icon="@drawable/ic_person_pin"
+        android:title="@string/title_donors" />
+
+    <item
+        android:id="@+id/nav_blood_requests"
+        android:icon="@drawable/ic_person_pin"
+        android:title="@string/title_blood_requests" />
+
+    <item
+        android:id="@+id/nav_blood_banks"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_banks" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_profile" />
+
+</menu>

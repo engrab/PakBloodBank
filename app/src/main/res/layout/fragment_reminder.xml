@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?attr/backgroundColor"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardMaxElevation="@dimen/cardMaxElevation"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:id="@+id/ll_add_donor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/reminder"
+                        android:textColor="@color/global__primary"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/by_setting_reminder"
+                        android:textColor="@color/global__primary"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:background="#000" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:text="@string/enter_your_last_donated_date"
+                        android:textColor="?attr/colorOnCardText"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/et_margin_medium"
+                        android:layout_marginBottom="@dimen/et_margin_medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lastDonatedDateEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/inputBackgroundColor"
+                            android:hint="@string/last_donated_date"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="?attr/inputTextColor"
+                            android:textColorHint="?attr/inputHintColor" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/submitBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_round_primary"
+                        android:text="@string/submit"
+                        android:textColor="@color/white" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:gravity="center"
+                        android:text="@string/last_donated_date"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/colorOnCardText"
+                        android:textSize="19sp" />
+
+                    <TextView
+                        android:id="@+id/lastDonatedDateTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/dd_mm_yyyy"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:gravity="center"
+                        android:text="@string/now_you_can_donate_on"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/colorOnCardText"
+                        android:textSize="19sp" />
+
+
+                    <TextView
+                        android:id="@+id/nextDonationDateTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:background="@drawable/button_round_primary"
+                        android:gravity="center"
+                        android:padding="14dp"
+                        android:text="@string/dd_mm_yyyy"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>
