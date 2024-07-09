@@ -22,7 +22,7 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
         <activity
-            android:name=".adding.SignInActivity"
+            android:name=".activities.SignInActivity"
             android:exported="false" />
 
         <meta-data

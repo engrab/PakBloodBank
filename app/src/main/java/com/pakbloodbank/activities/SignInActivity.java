@@ -1,4 +1,4 @@
-package com.pakbloodbank.adding;
+package com.pakbloodbank.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -25,9 +24,6 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.pakbloodbank.R;
-import com.pakbloodbank.activities.CompleteProfileActivity;
-import com.pakbloodbank.activities.MainActivity;
-import com.pakbloodbank.activities.PhoneAuthActivity;
 import com.pakbloodbank.utils.Constant;
 import com.pakbloodbank.utils.PrefManager;
 import com.pakbloodbank.utils.UrlHelper;

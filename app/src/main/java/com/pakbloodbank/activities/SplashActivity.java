@@ -1,7 +1,6 @@
     package com.pakbloodbank.activities;
 
     import android.Manifest;
-    import android.content.Context;
     import android.content.Intent;
     import android.content.res.Resources;
     import android.graphics.Color;
@@ -19,10 +18,7 @@
     import com.android.volley.toolbox.StringRequest;
     import com.android.volley.toolbox.Volley;
     import com.pakbloodbank.R;
-    import com.pakbloodbank.adding.SignInActivity;
-    import com.pakbloodbank.items.ItemAbout;
     import com.pakbloodbank.utils.Constant;
-    import com.pakbloodbank.utils.DBHelper;
     import com.pakbloodbank.utils.Methods;
     import com.pakbloodbank.utils.PrefManager;
     import com.pakbloodbank.utils.UrlHelper;

@@ -34,12 +34,7 @@ public class Constant {
     public static final String EXTRA_ACTION = "EXTRA_ACTION";
 
 
-    public static String ad_publisher_id = "pub-8356404931736973";
-    public static String admob_app_id = "ca-app-pub-1542366323524150~6327893410";
-//    public static String ad_banner_id = "ca-app-pub-1542366323524150/8116532747";
-    public static String ad_banner_id = "ca-app-pub-3940256099942544/6300978111";
-//    public static String ad_inter_id = "ca-app-pub-1542366323524150/1906347617";
-    public static String ad_inter_id = "ca-app-pub-3940256099942544/1033173712";
+
 
 
     public static int adShow = 5;

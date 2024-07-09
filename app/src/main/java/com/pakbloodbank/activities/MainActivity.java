@@ -31,7 +31,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.pakbloodbank.R;
-import com.pakbloodbank.fragments.FragmentBlogDesc;
 import com.pakbloodbank.fragments.FragmentBloodBanksHome;
 import com.pakbloodbank.fragments.FragmentCalls;
 import com.pakbloodbank.fragments.FragmentDonorHome;
@@ -134,15 +133,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public void loadBlogDetails() {
-        loadFrag(new FragmentBlogDesc(), getResources().getString(R.string.blog_description), fm, false);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setTitle(getResources().getString(R.string.blog_description));
 
-        add_donor.setVisibility(View.GONE);
-        add_blood_request.setVisibility(View.GONE);
-
-    }
 
     private void loadRemindersFragment() {
         loadFrag(new FragmentReminder(), getResources().getString(R.string.reminder), fm, false);
