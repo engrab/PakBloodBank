@@ -77,36 +77,40 @@
             } else {
                 Constant.showNoNetwork(this);
             }
-            checkPermissions(false);
+//            checkPermissions(false);
 
 
             setRegisteredHandler();
         }
 
         private void setRegisteredHandler() {
-            final int delay = 2000;
+            final int delay = 200;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     if (checkRegistration) {
+//                        //testing
+//                        pref.setPhoneNumber("03477141224");
+
                         isMobileRegistered(pref.getPhoneNumber());
-                    } else {
-                        new Handler().postDelayed(this, delay);
+                    }
+                    else {
+//                        new Handler().postDelayed(this, delay);
                     }
                 }
             }, delay);
         }
 
 
-        @Override
-        protected void onResume() {
-            super.onResume();
-            if (Methods.check_internet(this)) {
-                if (Methods.check_gps(this)) {
-                    checkPermissions(true);
-                }
-            }
-        }
+//        @Override
+//        protected void onResume() {
+//            super.onResume();
+//            if (Methods.check_internet(this)) {
+//                if (Methods.check_gps(this)) {
+//                    checkPermissions(true);
+//                }
+//            }
+//        }
 
 
 
@@ -144,7 +148,7 @@
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-            }, 1000);
+            }, 100);
 
         }
 
@@ -183,6 +187,8 @@
 
                                     } else {
 
+//                                        // testing
+//                                        gotoHome();
                                         gotoPhoneAuthActivity(true, ob.toString());
 
                                     }
@@ -194,6 +200,9 @@
 
                                     JSONObject ob = obj.getJSONObject("user_data");
                                     pref.saveUserData(ob.toString());
+
+//                                    // testing
+//                                    gotoHome();
 
                                     gotoPhoneAuthActivity(true, ob.toString());
 
@@ -222,7 +231,7 @@
 
         private void gotoPhoneAuthActivity(boolean toUpdate, String object) {
 
-            Intent intent = new Intent(SplashActivity.this, SignInActivity.class);
+            Intent intent = new Intent(SplashActivity.this, PhoneAuthActivity.class);
             intent.putExtra("toUpdate", toUpdate);
             intent.putExtra("user_data", object);
             startActivity(intent);

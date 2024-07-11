@@ -483,13 +483,14 @@ public class FragmentBloodBanksList extends Fragment {
 //        resetValues();
 
         final Button    submit = filterDialog.findViewById(R.id.submit);
-        final ImageView close  = filterDialog.findViewById(R.id.bt_close);
+//        final ImageView close  = filterDialog.findViewById(R.id.bt_close);
 
 
 
 //        setupSession();
 
-        close.setOnClickListener(v -> filterDialog.dismiss());
+
+//        close.setOnClickListener(v -> filterDialog.dismiss());
 
         submit.setOnClickListener(view -> {
 

@@ -57,10 +57,10 @@ import java.util.UUID;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
-public class CompleteProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     private static final String TAG = "ProfileActivity";
-
+//    ProgressDialog progressDialog;
     private String phone, name, address, cityValue, stateValue, countryValue, dob, bloodGroup, password, devId;
     Calendar myCalendar = Calendar.getInstance();
     String user_id = "";
@@ -159,6 +159,11 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
             setUpSpinners();
             handleClicks();
+
+//            progressDialog=new ProgressDialog(this);
+//            progressDialog.setCancelable(false);
+//            progressDialog.setMessage("Loading...");
+
             get_some_data(COUNTRIES_LIST, null);
 
         } else {
@@ -257,13 +262,13 @@ public class CompleteProfileActivity extends AppCompatActivity {
                             JSONObject ob = jsonArray.getJSONObject(0);
                             if (ob.getBoolean("success")) {
 
-                                Toast.makeText(CompleteProfileActivity.this, "" + ob.getString("msg"), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this, "" + ob.getString("msg"), Toast.LENGTH_SHORT).show();
                                 pref.saveUserData(ob.getJSONObject("user_data").toString());
 
                                 gotoMain();
 
                             } else {
-                                Toast.makeText(CompleteProfileActivity.this, "" + ob.getString("msg"), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this, "" + ob.getString("msg"), Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (Exception ee) {
@@ -331,6 +336,8 @@ public class CompleteProfileActivity extends AppCompatActivity {
                     countriesArrayList.clear();
                     countriesNameList.clear();
 
+//                    showProgressDialog();
+
                     Type country_type = new TypeToken<List<Countries>>() {
                     }.getType();
                     JSONArray countries = object.getJSONArray("countries");
@@ -346,6 +353,7 @@ public class CompleteProfileActivity extends AppCompatActivity {
                     statesNameList.clear();
                     statesArrayList.clear();
 
+//                    showProgressDialog();
                     Type states_type = new TypeToken<List<States>>() {
                     }.getType();
                     JSONArray states = object.getJSONArray("states");
@@ -368,6 +376,7 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
                     citiesArrayList.clear();
                     citiesNameList.clear();
+//                    showProgressDialog();
 
                     Type cities_type = new TypeToken<List<Cities>>() {
                     }.getType();
@@ -441,12 +450,13 @@ public class CompleteProfileActivity extends AppCompatActivity {
     }
 
     private void setupCountrySpinner() {
-        ArrayAdapter<String> countries = new ArrayAdapter<>(CompleteProfileActivity.this, R.layout.spinner, countriesNameList);
+        ArrayAdapter<String> countries = new ArrayAdapter<>(ProfileActivity.this, R.layout.spinner, countriesNameList);
         countries.setDropDownViewResource(R.layout.spinner);
         countrySpinner.setAdapter(countries);
 
         stateSpinner.setEnabled(false);
         citySpinner.setEnabled(false);
+//        dismissProgressDialog();
 
         countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -468,12 +478,13 @@ public class CompleteProfileActivity extends AppCompatActivity {
     }
 
     private void setupStateSpinner() {
-        ArrayAdapter<String> countries = new ArrayAdapter<>(CompleteProfileActivity.this, R.layout.spinner, statesNameList);
+        ArrayAdapter<String> countries = new ArrayAdapter<>(ProfileActivity.this, R.layout.spinner, statesNameList);
         countries.setDropDownViewResource(R.layout.spinner);
         stateSpinner.setAdapter(countries);
 
 
         stateSpinner.setEnabled(true);
+//        dismissProgressDialog();
 
         stateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -494,11 +505,12 @@ public class CompleteProfileActivity extends AppCompatActivity {
     }
 
     private void setupCitySpinner() {
-        ArrayAdapter<String> countries = new ArrayAdapter<>(CompleteProfileActivity.this, R.layout.spinner, citiesNameList);
+        ArrayAdapter<String> countries = new ArrayAdapter<>(ProfileActivity.this, R.layout.spinner, citiesNameList);
         countries.setDropDownViewResource(R.layout.spinner);
         citySpinner.setAdapter(countries);
 
         citySpinner.setEnabled(true);
+//        dismissProgressDialog();
         citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -537,7 +549,7 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
     private void setUpAddressClick() {
         lladdress.setOnClickListener(view -> {
-            Intent intent = new Intent(CompleteProfileActivity.this, PicklocationActivity.class);
+            Intent intent = new Intent(ProfileActivity.this, PicklocationActivity.class);
             intent.putExtra(PicklocationActivity.FORM_VIEW_INDICATOR, DESTINATION_ID);
             startActivityForResult(intent, 78);
         });
@@ -555,7 +567,7 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
     private void gotoMain() {
         this.finish();
-        startActivity(new Intent(CompleteProfileActivity.this, MainActivity.class));
+        startActivity(new Intent(ProfileActivity.this, MainActivity.class));
     }
 
     private void enableViews(View... views) {
@@ -602,9 +614,24 @@ public class CompleteProfileActivity extends AppCompatActivity {
     }
 
     private void initSpinnerAdapters(String[] array, Spinner spinner) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(CompleteProfileActivity.this, android.R.layout.simple_spinner_item, array);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this, android.R.layout.simple_spinner_item, array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }
+
+//    private void dismissProgressDialog() {
+//        if (progressDialog != null && progressDialog.isShowing()) {
+//            progressDialog.dismiss();
+//            progressDialog = null;
+//        }
+//    }
+//    private void showProgressDialog() {
+//        if (progressDialog == null) {
+//            progressDialog = new ProgressDialog(this);
+//            progressDialog.setMessage("Loading...");
+//            progressDialog.setCanceledOnTouchOutside(false);
+//            progressDialog.show();
+//        }
+//    }
 
 }

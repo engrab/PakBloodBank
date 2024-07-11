@@ -25,12 +25,12 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
             android:textColor="@android:color/white" />
 
-        <ImageView
-            android:id="@+id/bt_close"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="match_parent"
-            android:padding="@dimen/_8sdp"
-            app:srcCompat="@drawable/ic_cancel" />
+<!--        <ImageView-->
+<!--            android:id="@+id/bt_close"-->
+<!--            android:layout_width="@dimen/_40sdp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:padding="@dimen/_3sdp"-->
+<!--            app:srcCompat="@drawable/ic_cancel" />-->
 
     </LinearLayout>
 

@@ -970,9 +970,9 @@ public class FragmentRequestsList extends Fragment {
 
 
         final Button    submit = filterDialog.findViewById(R.id.submit);
-        final ImageView close  = filterDialog.findViewById(R.id.bt_close);
+//        final ImageView close  = filterDialog.findViewById(R.id.bt_close);
 
-        close.setOnClickListener(v -> filterDialog.dismiss());
+//        close.setOnClickListener(v -> filterDialog.dismiss());
 
         submit.setOnClickListener(view -> {
 

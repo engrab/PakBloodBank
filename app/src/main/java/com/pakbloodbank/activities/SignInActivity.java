@@ -40,6 +40,7 @@ import java.util.Map;
 public class SignInActivity extends AppCompatActivity {
     String mobile;
     private PrefManager pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,14 @@ public class SignInActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkUserPhoneNumber(mobile);
+    }
+
+
     private void checkUserPhoneNumber(final String mobile) {
         try {
 
@@ -173,7 +182,7 @@ public class SignInActivity extends AppCompatActivity {
         boolean toUpdate = getIntent().getBooleanExtra("toUpdate", false);
         String user_data = getIntent().getStringExtra("user_data");
 
-        Intent profile = new Intent(SignInActivity.this, CompleteProfileActivity.class);
+        Intent profile = new Intent(SignInActivity.this, ProfileActivity.class);
         profile.putExtra("toUpdate", toUpdate);
         profile.putExtra("user_data", user_data);
         profile.putExtra("mobile", mobile);
