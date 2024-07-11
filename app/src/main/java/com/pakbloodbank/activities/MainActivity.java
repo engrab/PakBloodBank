@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
 
         bottomNavView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        setupDrawerNavigation(toolbar);
+//        setupDrawerNavigation(toolbar);
 
 
         loadDonorHome();
@@ -155,15 +155,15 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void setupDrawerNavigation(Toolbar toolbar) {
-        DrawerLayout   drawer         = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-    }
+//    private void setupDrawerNavigation(Toolbar toolbar) {
+//        DrawerLayout   drawer         = findViewById(R.id.drawer_layout);
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
+//        navigationView.setNavigationItemSelectedListener(this);
+//    }
 
     private void get_user_data() {
         pref = new PrefManager(this);

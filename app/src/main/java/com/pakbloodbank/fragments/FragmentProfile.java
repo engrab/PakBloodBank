@@ -1,6 +1,7 @@
 package com.pakbloodbank.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,8 +19,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 import com.pakbloodbank.R;
 import com.pakbloodbank.activities.MainActivity;
+import com.pakbloodbank.activities.SplashActivity;
 import com.pakbloodbank.adapters.AdapterBloodDonors;
 import com.pakbloodbank.adapters.AdapterBloodRequests;
 import com.pakbloodbank.items.Donor;
@@ -27,6 +30,7 @@ import com.pakbloodbank.items.DonorFilterItem;
 import com.pakbloodbank.items.RequestFilterItem;
 import com.pakbloodbank.items.RequestsItem;
 import com.pakbloodbank.utils.Constant;
+import com.pakbloodbank.utils.PrefManager;
 import com.pakbloodbank.utils.UrlHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -39,6 +43,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import static com.pakbloodbank.utils.Constant.TAG;
 
@@ -88,6 +93,12 @@ public class FragmentProfile extends Fragment {
         setClickListeners(rootView);
 
         getHomeData();
+        rootView.findViewById(R.id.btn_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
         return rootView;
     }
 
@@ -179,5 +190,14 @@ public class FragmentProfile extends Fragment {
 
         view_donors_by_user = v.findViewById(R.id.view_donors_by_user);
         view_requests_by_user = v.findViewById(R.id.view_requests_by_user);
+    }
+
+    public void signOut() {
+        PrefManager pref = new PrefManager(context);
+        pref.clearPref();
+
+        FirebaseAuth.getInstance().signOut();
+        requireActivity().finish();
+        startActivity(new Intent(context, SplashActivity.class));
     }
 }
