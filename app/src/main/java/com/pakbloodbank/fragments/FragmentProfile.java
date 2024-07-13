@@ -24,6 +24,7 @@ import com.pakbloodbank.R;
 import com.pakbloodbank.activities.MainActivity;
 import com.pakbloodbank.activities.ProfileActivity;
 import com.pakbloodbank.activities.SplashActivity;
+import com.pakbloodbank.activities.UserInfoActivity;
 import com.pakbloodbank.adapters.AdapterBloodDonors;
 import com.pakbloodbank.adapters.AdapterBloodRequests;
 import com.pakbloodbank.items.Donor;
@@ -143,8 +144,7 @@ public class FragmentProfile extends Fragment {
         v.findViewById(R.id.layout_user_info).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ProfileActivity.class);
-                intent.putExtra("update", true);
+                Intent intent = new Intent(context, UserInfoActivity.class);
                 startActivity(intent);
             }
         });

@@ -6,9 +6,9 @@
         android:icon="@drawable/menu_theme"
         android:title="@string/menu_theme"
         app:showAsAction="always" />
-<!--    <item-->
-<!--        android:id="@+id/action_settings"-->
-<!--        android:orderInCategory="100"-->
-<!--        android:title="@string/action_settings"-->
-<!--        app:showAsAction="never" />-->
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/baseline_info_24"
+        android:title="@string/action_about"
+        app:showAsAction="always" />
 </menu>

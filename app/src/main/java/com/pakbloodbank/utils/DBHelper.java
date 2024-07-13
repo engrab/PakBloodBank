@@ -115,6 +115,55 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void addtoAbout() {
+        try {
+            dml("delete from about");
+            dml("insert into about (name,logo,version,author,contact,email,website,desc,developed,privacy) values (" +
+                    "'" + Constant.itemAbout.getAppName() + "','" + Constant.itemAbout.getAppLogo() + "','" + Constant.itemAbout.getAppVersion() + "'" +
+                    ",'" + Constant.itemAbout.getAuthor() + "','" + Constant.itemAbout.getContact() + "','" + Constant.itemAbout.getEmail() + "'" +
+                    ",'" + Constant.itemAbout.getWebsite() + "','" + Constant.itemAbout.getAppDesc() + "','" + Constant.itemAbout.getDevelopedby() + "'" +
+                    ",'" + Constant.itemAbout.getPrivacy() + "')");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Boolean getAbout() {
+        try {
+            String selectQuery = "SELECT * FROM about";
+
+            Cursor c = getData(selectQuery);
+
+            if (c != null && c.getCount() > 0) {
+                c.moveToFirst();
+                for (int i = 0; i < c.getCount(); i++) {
+                    String appname = c.getString(c.getColumnIndex("name"));
+                    String applogo = c.getString(c.getColumnIndex("logo"));
+                    String desc = c.getString(c.getColumnIndex("desc"));
+                    String appversion = c.getString(c.getColumnIndex("version"));
+                    String appauthor = c.getString(c.getColumnIndex("author"));
+                    String appcontact = c.getString(c.getColumnIndex("contact"));
+                    String email = c.getString(c.getColumnIndex("email"));
+                    String website = c.getString(c.getColumnIndex("website"));
+                    String privacy = c.getString(c.getColumnIndex("privacy"));
+                    String developedby = c.getString(c.getColumnIndex("developed"));
+
+
+
+                    Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, developedby);
+                }
+                c.close();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 //    public void addToCities(List<CityModel> cities) {
 //        try {
 //            dml("delete from cities");

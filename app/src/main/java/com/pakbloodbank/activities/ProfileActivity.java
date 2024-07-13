@@ -330,6 +330,11 @@ public class ProfileActivity extends AppCompatActivity {
                                 Toast.makeText(ProfileActivity.this, "" + ob.getString("msg"), Toast.LENGTH_SHORT).show();
                                 pref.saveUserData(ob.getJSONObject("user_data").toString());
 
+                                pref.setFullName(name);
+                                pref.setAddress(address);
+
+
+
                                 gotoMain();
 
                             } else {
@@ -517,6 +522,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                     countryValue = countriesArrayList.get((countrySpinner.getSelectedItemPosition())).getId();
+                    pref.setCountry(countriesArrayList.get((countrySpinner.getSelectedItemPosition())).getName());
 
                     get_some_data(STATES_LIST, countryValue);
             }
@@ -544,6 +550,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 stateValue = statesArrayList.get((stateSpinner.getSelectedItemPosition())).getId();
+                pref.setState(statesArrayList.get((stateSpinner.getSelectedItemPosition())).getName());
 
                 get_some_data(CITIES_LIST, stateValue);
             }
@@ -568,6 +575,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 cityValue = citiesArrayList.get((citySpinner.getSelectedItemPosition())).getId();
+                pref.setCity(citiesArrayList.get((citySpinner.getSelectedItemPosition())).getName());
 
 
             }
@@ -586,6 +594,7 @@ public class ProfileActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         et.setText(sdf.format(calendar.getTime()));
+        pref.setDob(et.getText().toString());
     }
 
     private void showDateDialog(DatePickerDialog.OnDateSetListener ldate, Calendar dobCalendar, int last_year) {
@@ -649,6 +658,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 bloodGroup = String.valueOf(parent.getItemAtPosition(position));
+                pref.setBloodGroup(bloodGroup);
             }
 
             @Override

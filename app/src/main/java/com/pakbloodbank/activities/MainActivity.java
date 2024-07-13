@@ -251,6 +251,9 @@ public class MainActivity extends AppCompatActivity
         if (menuItem.getItemId() == R.id.action_theme) {
             this.dialog.selectTheme(this.pref.getNightMode());
         }
+        if (menuItem.getItemId() == R.id.action_about) {
+            startActivity(new Intent(this, AboutActivity.class));
+        }
         return super.onOptionsItemSelected(menuItem);
     }
 

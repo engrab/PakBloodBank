@@ -258,6 +258,8 @@
     <string name="bank">Bank</string>
     <string name="pak_blood">PakBlood</string>
     <string name="dev_by">Develop By: Alishbah Shahzadi \n Copyright © 2024</string>
+    <string name="website_url">https://uncovertarget.com/BloodBankAdminPanel</string>
+    <string name="action_about">About</string>
 
 
 </resources>

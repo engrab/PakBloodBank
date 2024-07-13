@@ -92,4 +92,58 @@ public class PrefManager {
     public void clearPref() {
         editor.clear().apply();
     }
+
+    public void setFullName(String name) {
+        editor.putString("name", name).apply();
+    }
+
+    public String getFullName() {
+        return sharedPreferences.getString("name", "");
+    }
+    public void setAddress(String address) {
+        editor.putString("address", address).apply();
+    }
+
+    public String getAddress() {
+        return sharedPreferences.getString("address", "");
+    }
+
+    public void setCountry(String country) {
+        editor.putString("country", country).apply();
+    }
+
+    public String getCountry() {
+        return sharedPreferences.getString("country", "");
+    }
+
+    public void setState(String state) {
+        editor.putString("state", state).apply();
+    }
+
+    public String getState() {
+        return sharedPreferences.getString("state", "");
+    }
+
+    public void setCity(String city) {
+        editor.putString("city", city).apply();
+    }
+
+    public String getCity() {
+        return sharedPreferences.getString("city", "");
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        editor.putString("bloodGroup", bloodGroup).apply();
+    }
+
+    public String getBloodGroup() {
+        return sharedPreferences.getString("bloodGroup", "");
+    }
+    public void setDob(String dob) {
+        editor.putString("dob", dob).apply();
+    }
+
+    public String getDob() {
+        return sharedPreferences.getString("dob", "");
+    }
 }
