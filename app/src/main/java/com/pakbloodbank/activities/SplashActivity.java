@@ -64,23 +64,29 @@
             Constant.columnHeight = (int) (Constant.columnWidth * 1.44);
 
 
-            if (methods.isNetworkAvailable()) {
-
-                if (Methods.check_internet(this)) {
-                    if (Methods.check_gps(this)) {
-                        checkPermissions(true);
-                    }
+//comment for testing purpose . in productioin we uncomment it.
 
 
-                }
+//            if (methods.isNetworkAvailable()) {
+//
+//                if (Methods.check_internet(this)) {
+//                    if (Methods.check_gps(this)) {
+//                        checkPermissions(true);
+//                    }
+//
+//
+//                }
+//
+//            } else {
+//                Constant.showNoNetwork(this);
+//            }
+//
+//
+//
+//            setRegisteredHandler();
 
-            } else {
-                Constant.showNoNetwork(this);
-            }
 
-
-
-            setRegisteredHandler();
+            gotoHome();
         }
 
         private void setRegisteredHandler() {

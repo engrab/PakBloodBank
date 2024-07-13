@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.pakbloodbank.R;
 import com.pakbloodbank.activities.MainActivity;
+import com.pakbloodbank.activities.ProfileActivity;
 import com.pakbloodbank.activities.SplashActivity;
 import com.pakbloodbank.adapters.AdapterBloodDonors;
 import com.pakbloodbank.adapters.AdapterBloodRequests;
@@ -54,11 +55,13 @@ public class FragmentProfile extends Fragment {
     private ArrayList<RequestsItem> requests_by_user_list;
 
     RecyclerView rv_donors_by_user, rv_requests_by_user;
-    TextView view_donors_by_user, view_requests_by_user;
-    private String user_id;
+    TextView view_donors_by_user, view_requests_by_user, user_data;
+    private String user_id, name, mobile;
 
 
     private boolean isEdit;
+
+    private PrefManager pref;
 
 
     public static FragmentProfile createInstance(boolean isEdit) {
@@ -83,6 +86,10 @@ public class FragmentProfile extends Fragment {
         try {
             assert context != null;
             user_id = ((MainActivity) context).userData.getString("id");
+            name = ((MainActivity) context).userData.getString("name");
+            mobile = ((MainActivity) context).userData.getString("mobile");
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -99,6 +106,13 @@ public class FragmentProfile extends Fragment {
                 signOut();
             }
         });
+
+
+
+        user_data.setText("Name: " + name + " Mobile: " + mobile);
+
+
+
         return rootView;
     }
 
@@ -124,6 +138,15 @@ public class FragmentProfile extends Fragment {
             reqItem.setAdded_by(user_id);
             FragmentRequestsList fragment = FragmentRequestsList.createInstance(reqItem);
             ((MainActivity) context).loadFrag(fragment, getString(R.string.popular_blood_banks), ((MainActivity) context).fm, false);
+        });
+
+        v.findViewById(R.id.layout_user_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProfileActivity.class);
+                intent.putExtra("update", true);
+                startActivity(intent);
+            }
         });
 
     }
@@ -190,6 +213,8 @@ public class FragmentProfile extends Fragment {
 
         view_donors_by_user = v.findViewById(R.id.view_donors_by_user);
         view_requests_by_user = v.findViewById(R.id.view_requests_by_user);
+        user_data = v.findViewById(R.id.user_data);
+
     }
 
     public void signOut() {

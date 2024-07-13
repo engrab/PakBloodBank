@@ -39,27 +39,29 @@
 
         <Button
             android:id="@+id/add_donor"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_marginLeft="120dp"
-            android:layout_marginRight="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
             android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
             android:background="@drawable/button_round_add"
             android:text="@string/add_donor"
             android:textColor="@color/white"
+            android:drawableLeft="@android:drawable/ic_input_add"
+            android:drawableTint="@color/white"
             android:textSize="12sp"
             android:visibility="gone" />
 
         <Button
             android:id="@+id/add_request"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_marginLeft="120dp"
-            android:layout_marginRight="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:background="@drawable/button_round_add"
             android:text="@string/request_blood"
             android:textColor="@color/white"
+            android:drawableLeft="@android:drawable/ic_input_add"
+            android:drawableTint="@color/white"
             android:textSize="12sp"
             android:visibility="gone" />
 

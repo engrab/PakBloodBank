@@ -274,11 +274,11 @@ public class MainActivity extends AppCompatActivity
                     loadRequestHome();
 
                     return true;
-                case R.id.nav_blood_banks:
-
-                    loadBloodBanksHome();
-
-                    return true;
+//                case R.id.nav_blood_banks:
+//
+//                    loadBloodBanksHome();
+//
+//                    return true;
                 case R.id.nav_profile:
                     add_donor.setVisibility(View.GONE);
                     add_blood_request.setVisibility(View.GONE);

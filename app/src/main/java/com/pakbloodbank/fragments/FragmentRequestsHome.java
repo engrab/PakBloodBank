@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -206,13 +207,14 @@ public class FragmentRequestsHome extends Fragment {
 
     private void setupAdapters() {
 
-        rv_blood_groups.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+//        rv_blood_groups.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        rv_blood_groups.setLayoutManager(new GridLayoutManager(context, 4));
         rv_blood_groups.setAdapter(new AdapterBloodGroups(context, Constant.getBloodGroups(), "request"));
 
-        rv_popular_requests.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        rv_nearby_requests.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        rv_recent_requests.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        rv_requests_by_user.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        rv_popular_requests.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        rv_nearby_requests.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        rv_recent_requests.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        rv_requests_by_user.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
 
         rv_popular_requests.setAdapter(new AdapterBloodRequests(context, popular_requests_list, false, true));
         rv_nearby_requests.setAdapter(new AdapterBloodRequests(context, nearby_requests_list, false, true));

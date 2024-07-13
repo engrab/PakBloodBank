@@ -22,13 +22,13 @@ public class MyApplication extends Application {
 
 
     public static final String LANGUAGE_ENGLISH = "en";
-    public static final String LANGUAGE_ENGLISH_COUNTRY = "US";
-    public static final String LANGUAGE_ARABIC = "ar";
-    public static final String LANGUAGE_ARABIC_COUNTRY = "SA";
-    public static final String LANGUAGE_URDU = "ur";
-    public static final String LANGUAGE_URDU_COUNTRY = "PK";
 
-    private static final String ONESIGNAL_APP_ID = "283e955c-857c-46bc-bf3a-5098039265fb";
+    public static final String LANGUAGE_ARABIC = "ar";
+
+    public static final String LANGUAGE_URDU = "ur";
+
+
+    private static final String ONESIGNAL_APP_ID = "28def764-53e7-4136-96f5-75828fd8b568";
 
     @Override
     public void onCreate() {
@@ -39,7 +39,7 @@ public class MyApplication extends Application {
         ViewPump.init(ViewPump.builder()
                 .addInterceptor(new CalligraphyInterceptor(
                         new CalligraphyConfig.Builder()
-                                .setDefaultFontPath("fonts/GIDOLINYA_REGULAR.OTF")
+                                .setDefaultFontPath("fonts/ARIAL.TTF")
                                 .setFontAttrId(R.attr.fontPath)
                                 .build()))
                 .build());

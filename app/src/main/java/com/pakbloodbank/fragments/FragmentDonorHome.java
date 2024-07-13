@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -39,6 +40,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.pakbloodbank.utils.Constant.GRID_PADDING;
 import static com.pakbloodbank.utils.Constant.TAG;
 
 public class FragmentDonorHome extends Fragment {
@@ -186,13 +188,14 @@ public class FragmentDonorHome extends Fragment {
 
     private void setupAdapters() {
 
-        rv_blood_groups.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+//        rv_blood_groups.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        rv_blood_groups.setLayoutManager(new GridLayoutManager(context, 4));
         rv_blood_groups.setAdapter(new AdapterBloodGroups(context, Constant.getBloodGroups(), "donor"));
 
-        rv_popular_donors.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        rv_nearby_donors.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        rv_recent_donors.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        rv_donors_by_user.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        rv_popular_donors.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        rv_nearby_donors.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        rv_recent_donors.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        rv_donors_by_user.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
 
         rv_popular_donors.setAdapter(new AdapterBloodDonors(context, popular_donors_list, false, true));
         rv_nearby_donors.setAdapter(new AdapterBloodDonors(context, nearby_donors_list, false, true));

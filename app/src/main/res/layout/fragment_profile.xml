@@ -24,6 +24,87 @@
             android:orientation="vertical"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardMaxElevation="@dimen/cardMaxElevation"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/layout_user_info"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/view_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:background="@drawable/button_round_add"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/view_all"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_body_s_size"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvUser"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvUser" />
+
+
+                    <TextView
+                        android:id="@+id/tvUser"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_marginRight="@dimen/space_8"
+                        android:gravity="start"
+                        android:text="@string/user_info"
+                        android:textAlignment="viewStart"
+                        android:textColor="?attr/cardTitleTextColor"
+                        android:textSize="18sp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toStartOf="@+id/view_user"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--                app:layout_constraintTop_toBottomOf="@id/a_view" />-->
+
+
+                    <TextView
+                        android:id="@+id/user_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/space_8"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingEnd="@dimen/space_8"
+                        android:paddingRight="@dimen/space_8"
+                        android:paddingBottom="@dimen/space_8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUser"
+                        android:text="@string/user_info"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
 
 
             <com.google.android.material.card.MaterialCardView
@@ -194,6 +275,8 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+
+
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
@@ -203,10 +286,29 @@
         android:text="@string/logout"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvDev"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="12sp"
         android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/tvDev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_8"
+        android:layout_marginLeft="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_8"
+        android:layout_marginRight="@dimen/space_8"
+        android:text="@string/dev_by"
+        android:textAlignment="center"
+        android:textColor="?attr/cardTitleTextColor"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
 

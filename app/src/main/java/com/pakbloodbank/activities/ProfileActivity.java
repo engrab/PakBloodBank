@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -48,6 +49,7 @@ import org.json.JSONObject;
 import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -64,7 +66,8 @@ public class ProfileActivity extends AppCompatActivity {
     private String phone, name, address, cityValue, stateValue, countryValue, dob, bloodGroup, password, devId;
     Calendar myCalendar = Calendar.getInstance();
     String user_id = "";
-    private EditText nameEt, dobEt, passwordEt, phoneEt;
+    private EditText nameEt, dobEt, passwordEt;
+    private TextView phoneEt;
 
     private Button saveBtn;
     private String[] cities;
@@ -86,7 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ArrayList<States> statesArrayList = new ArrayList<>();
     private ArrayList<Cities> citiesArrayList = new ArrayList<>();
     private ArrayList<String> citiesNameList = new ArrayList<>(), statesNameList = new ArrayList<>(), countriesNameList = new ArrayList<>();
-
+    String[] bloodArray;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -116,19 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
         String phoneNum = "";
 
 
-        if (user_data != null)
-            try {
 
-                JSONObject user = new JSONObject(user_data);
-
-
-                user_id = user.getString("id");
-                phoneNum = user.getString("mobile");
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
 
         dbHelper = new DBHelper(this);
         progress = new ProgressDialog(this);
@@ -169,6 +160,80 @@ public class ProfileActivity extends AppCompatActivity {
         } else {
             Constant.showNoNetwork(this);
         }
+
+        if (user_data != null)
+            try {
+
+                JSONObject user = new JSONObject(user_data);
+
+                user_id = user.getString("id");
+                phoneNum = user.getString("mobile");
+
+                if (getIntent().getBooleanExtra("update", false)){
+
+                    nameEt.setText(user.getString("name"));
+                    addressEt.setText(user.getString("address"));
+                    phoneEt.setText(phoneNum);
+//                    dobEt.setText(user.getString("date_of_birth"));
+//                    citySpinner.setSelection(citiesNameList.indexOf(user.getString("city")));
+//                    stateSpinner.setSelection(statesNameList.indexOf(user.getString("state")));
+//                    countrySpinner.setSelection(countriesNameList.indexOf(user.getString("country")));
+//                    bloodGroupSpinner.setSelection(Arrays.asList(bloodArray).indexOf(user.getString("blood_group")));
+//                    passwordEt.setText(user.getString("password"));
+//                    saveBtn.setText("Update");
+//
+//                    if (!progress.isShowing()) {
+//                        progress.show();
+//                    }
+//
+//                    new Handler().postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            get_some_data(COUNTRIES_LIST, null);
+//                            String country = null;
+//                            try {
+//                                country = user.getString("country");
+//                            } catch (JSONException e) {
+//                                throw new RuntimeException(e);
+//                            }
+//                            int countryIndex = countriesNameList.indexOf(country)-1;
+//                            countrySpinner.setSelection(countryIndex);
+//
+//                            get_some_data(STATES_LIST, countriesNameList.get(countryIndex));
+//                            String state = null;
+//                            try {
+//                                state = user.getString("state");
+//                            } catch (JSONException e) {
+//                                throw new RuntimeException(e);
+//                            }
+//                            int stateIndex = statesNameList.indexOf(state)-1;
+//                            stateSpinner.setSelection(stateIndex);
+//
+//
+//
+//                            get_some_data(CITIES_LIST, statesNameList.get(stateIndex));
+//                            String city = null;
+//                            try {
+//                                city = user.getString("city");
+//                            } catch (JSONException e) {
+//                                throw new RuntimeException(e);
+//                            }
+//                            int cityIndex = citiesNameList.indexOf(city)-1;
+//                            citySpinner.setSelection(cityIndex);
+//                        }
+//                    },5000);
+//
+//
+//                    if (progress.isShowing()) {
+//                        progress.dismiss();
+//                    }
+
+                }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
     }
 
@@ -213,12 +278,12 @@ public class ProfileActivity extends AppCompatActivity {
             dob = format_date(myCalendar);
         }
 
-        if (phoneEt.getText().toString().isEmpty()) {
-            error = true;
-            phoneEt.setError(getString(R.string.please_enter_mobile_number));
-        } else {
-            phone = phoneEt.getText().toString();
-        }
+//        if (phoneEt.getText().toString().isEmpty()) {
+//            error = true;
+//            phoneEt.setError(getString(R.string.please_enter_mobile_number));
+//        } else {
+//            phone = phoneEt.getText().toString();
+//        }
 
     }
 
@@ -575,7 +640,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void setUpSpinners() {
 
-        String[] bloodArray = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"};
+
+        bloodArray = new String[]{"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"};
         initSpinnerAdapters(bloodArray, bloodGroupSpinner);
 
         bloodGroupSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -597,5 +663,40 @@ public class ProfileActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }
+
+
+    private String countryMatch(String country){
+
+        for(Countries c : countriesArrayList){
+            if(c.getId().equals(country)){
+                return c.getName();
+            }
+        }
+        return null;
+
+    }
+
+    private String stateMatch(String state){
+
+        for(States c : statesArrayList){
+            if(c.getId().equals(state)){
+                return c.getName();
+            }
+        }
+        return null;
+
+    }
+
+    private String cityMatch(String city){
+
+        for(Cities c : citiesArrayList){
+            if(c.getId().equals(city)){
+                return c.getName();
+            }
+        }
+        return null;
+
+    }
+
 
 }

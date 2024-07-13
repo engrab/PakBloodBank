@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
-    tools:context="com.pakbloodbank.activities.LoginActivity">
+    tools:context="com.pakbloodbank.activities.PhoneAuthActivity">
 
 
     <LinearLayout
@@ -42,9 +42,17 @@
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="cursive"
                     android:gravity="center"
-                    android:text="@string/app_name"
+                    android:text="@string/pak_blood"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/bank"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="@color/colorPrimaryDark" />
 

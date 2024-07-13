@@ -59,9 +59,9 @@ public class AdapterBloodDonors extends RecyclerView.Adapter<AdapterBloodDonors.
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView;
-        if (horizontal)
-            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_donor_horizontal_bloodgroup, parent, false);
-        else
+//        if (horizontal)
+//            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_donor_horizontal_bloodgroup, parent, false);
+//        else
             itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_donor_vertical_bloodgroup, parent, false);
         return new MyViewHolder(itemView);
     }
