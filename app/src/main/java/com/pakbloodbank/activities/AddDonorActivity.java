@@ -595,11 +595,11 @@ public class AddDonorActivity extends AppCompatActivity {
                             }
                         }
                     }
-
+                    stateSpinner.setEnabled(true);
                     statesSpinnerAdapter = new ArrayAdapter<>(AddDonorActivity.this, R.layout.spinner, statesNameList);
                     statesSpinnerAdapter.setDropDownViewResource(R.layout.spinner);
                     stateSpinner.setAdapter(statesSpinnerAdapter);
-                    stateSpinner.setEnabled(true);
+
 
                     new Handler().postDelayed(() -> {
                         if (stateId != null) {
@@ -639,11 +639,11 @@ public class AddDonorActivity extends AppCompatActivity {
                         }
                     }
 
-
+                    citySpinner.setEnabled(true);
                     citiesSpinnerAdapter = new ArrayAdapter<>(AddDonorActivity.this, R.layout.spinner, citiesNameList);
                     citiesSpinnerAdapter.setDropDownViewResource(R.layout.spinner);
                     citySpinner.setAdapter(citiesSpinnerAdapter);
-                    citySpinner.setEnabled(true);
+
 
                     new Handler().postDelayed(() -> {
                         if (cityId != null) {

@@ -58,9 +58,6 @@ public class PicklocationActivity extends AppCompatActivity
         implements
         View.OnClickListener,
         OnMapReadyCallback
-//        ,
-//        ConnectionCallbacks,
-//        OnConnectionFailedListener
 {
     public static final String FORM_VIEW_INDICATOR = "FormToFill";
     public static final String LOCATION_LATLNG = "LocationLatLng";
@@ -86,21 +83,7 @@ public class PicklocationActivity extends AppCompatActivity
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 
-//    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-//    }
-//
-//    public void onConnectionSuspended(int i) {
-//    }
-//
-//    public void onStart() {
-//        super.onStart();
-//        this.googleApiClient.connect();
-//    }
-//
-//    public void onStop() {
-//        super.onStop();
-//        this.googleApiClient.disconnect();
-//    }
+
 
     private void setUpSupportToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -126,7 +109,6 @@ public class PicklocationActivity extends AppCompatActivity
         this.autoCompleteTextView = findViewById(R.id.locationPicker_autoCompleteText);
         this.currentAddress = findViewById(R.id.locationPicker_currentAddress);
         this.selectLocation = findViewById(R.id.locationPicker_destinationButton);
-//        this.backbutton = findViewById(R.id.back_btn);
 
 
         String apiKey = getString(R.string.google_maps_key);
@@ -138,12 +120,10 @@ public class PicklocationActivity extends AppCompatActivity
         placesClient = Places.createClient(this);
 
 
-//        setupGoogleApiClient();
         ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.locationPicker_maps)).getMapAsync(this);
         setupAutocompleteTextView();
         this.formToFill = getIntent().getIntExtra(FORM_VIEW_INDICATOR, -1);
         this.selectLocation.setOnClickListener(view -> selectLocation());
-//        this.backbutton.setOnClickListener(view -> finish());
     }
 
     public void selectLocation() {
@@ -157,11 +137,7 @@ public class PicklocationActivity extends AppCompatActivity
         finish();
     }
 
-//    private void setupGoogleApiClient() {
-//        if (this.googleApiClient == null) {
-//            this.googleApiClient = new Builder(this).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(LocationServices.API).addApi(Places.GEO_DATA_API).build();
-//        }
-//    }
+
 
     private void setupAutocompleteTextView() {
         this.mAdapter = new PlaceArrayAdapter(this, Constant.RECT_BOUNDS);
@@ -194,7 +170,6 @@ public class PicklocationActivity extends AppCompatActivity
     }
 
     public void getLocationFromPlaceId(String str, OnSuccessListener<FetchPlaceResponse> resultCallBack) {
-//        Places.getPlaceById(this.googleApiClient, str).setResultCallback(resultCallback);
 
         List<Place.Field> placeFields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG);
 
@@ -219,7 +194,6 @@ public class PicklocationActivity extends AppCompatActivity
             ActivityCompat.requestPermissions(this, new String[]{"android.permission.ACCESS_FINE_LOCATION"}, REQUEST_PERMISSION_LOCATION);
             return;
         }
-//        this.lastKnownLocation = LocationServices.FusedLocationApi.getLastLocation(this.googleApiClient);
 
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -281,9 +255,7 @@ public class PicklocationActivity extends AppCompatActivity
         }).start();
     }
 
-//    public void onConnected(@Nullable Bundle bundle) {
-//        updateLastLocation();
-//    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

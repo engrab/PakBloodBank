@@ -57,22 +57,9 @@ public class Methods {
         return columnWidth;
     }
 
-    public void forceRTLIfSupported(Window window) {
-        if (context.getResources().getString(R.string.isRTL).equals("true")) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                window.getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-            }
-        }
-    }
 
-    public void setStatusColor(Window window) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            window.setStatusBarColor(Color.TRANSPARENT);
-        }
-    }
+
+
 
 
     public static boolean isEmulator() {
@@ -125,12 +112,5 @@ public class Methods {
         }
     }
 
-    public void setNewLocale(Context ctx, String language, String country) {
-        Lingver.getInstance().setLocale(ctx, language, country);
 
-        Intent i = new Intent(ctx, SplashActivity.class);
-        ctx.startActivity(i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
-
-        Toast.makeText(ctx, "App restarted", Toast.LENGTH_SHORT).show();
-    }
 }

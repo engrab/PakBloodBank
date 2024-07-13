@@ -353,7 +353,6 @@ public class ProfileActivity extends AppCompatActivity {
                     statesNameList.clear();
                     statesArrayList.clear();
 
-//                    showProgressDialog();
                     Type states_type = new TypeToken<List<States>>() {
                     }.getType();
                     JSONArray states = object.getJSONArray("states");
@@ -366,17 +365,12 @@ public class ProfileActivity extends AppCompatActivity {
 
                     setupStateSpinner();
 
-//                    ArrayAdapter<String> states_adapter = new ArrayAdapter<>(CompleteProfileActivity.this, R.layout.spinner, statesNameList);
-//                    states_adapter.setDropDownViewResource(R.layout.spinner);
-//                    stateSpinner.setAdapter(states_adapter);
-//                    stateSpinner.setEnabled(true);
 
 
                 } else if (what_data == CITIES_LIST) {
 
                     citiesArrayList.clear();
                     citiesNameList.clear();
-//                    showProgressDialog();
 
                     Type cities_type = new TypeToken<List<Cities>>() {
                     }.getType();
@@ -391,10 +385,6 @@ public class ProfileActivity extends AppCompatActivity {
                     Log.d(TAG, "get_some_data: "+citiesNameList.size());
 
 
-//                    ArrayAdapter<String> cities_adapter = new ArrayAdapter<>(CompleteProfileActivity.this, R.layout.spinner, citiesNameList);
-//                    cities_adapter.setDropDownViewResource(R.layout.spinner);
-//                    citySpinner.setAdapter(cities_adapter);
-//                    citySpinner.setEnabled(true);
                     setupCitySpinner();
 
                 }
@@ -456,7 +446,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         stateSpinner.setEnabled(false);
         citySpinner.setEnabled(false);
-//        dismissProgressDialog();
 
         countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -484,7 +473,6 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         stateSpinner.setEnabled(true);
-//        dismissProgressDialog();
 
         stateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -510,7 +498,6 @@ public class ProfileActivity extends AppCompatActivity {
         citySpinner.setAdapter(countries);
 
         citySpinner.setEnabled(true);
-//        dismissProgressDialog();
         citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -570,11 +557,7 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(new Intent(ProfileActivity.this, MainActivity.class));
     }
 
-    private void enableViews(View... views) {
-        for (View v : views) {
-            v.setEnabled(true);
-        }
-    }
+
 
     private void showViews(View... views) {
         for (View v : views) {
@@ -582,11 +565,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
-    private void disableViews(View... views) {
-        for (View v : views) {
-            v.setEnabled(false);
-        }
-    }
+
 
     private void hideViews(View... views) {
         for (View v : views) {
@@ -618,20 +597,5 @@ public class ProfileActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }
-
-//    private void dismissProgressDialog() {
-//        if (progressDialog != null && progressDialog.isShowing()) {
-//            progressDialog.dismiss();
-//            progressDialog = null;
-//        }
-//    }
-//    private void showProgressDialog() {
-//        if (progressDialog == null) {
-//            progressDialog = new ProgressDialog(this);
-//            progressDialog.setMessage("Loading...");
-//            progressDialog.setCanceledOnTouchOutside(false);
-//            progressDialog.show();
-//        }
-//    }
 
 }

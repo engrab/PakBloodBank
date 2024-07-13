@@ -15,7 +15,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -433,15 +432,12 @@ public class FragmentBloodBanksList extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-//                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.black));
-//                    ((TextView) parent.getChildAt(0)).setTextSize(14);
+
                     requestFilter.setCity(citiesArrayList.get((citySpinner.getSelectedItemPosition())).getId());
-//                    requestFilter.setCity("");
+
 
                 } else {
-//                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.black));
-//                    ((TextView) parent.getChildAt(0)).setTextSize(14);
-//                    requestFilter.setCity("");
+
                     requestFilter.setCity(citiesArrayList.get((citySpinner.getSelectedItemPosition() - 1)).getId());
 
                 }
@@ -480,17 +476,10 @@ public class FragmentBloodBanksList extends Fragment {
     private void searchFilter() {
 
 
-//        resetValues();
 
         final Button    submit = filterDialog.findViewById(R.id.submit);
-//        final ImageView close  = filterDialog.findViewById(R.id.bt_close);
 
 
-
-//        setupSession();
-
-
-//        close.setOnClickListener(v -> filterDialog.dismiss());
 
         submit.setOnClickListener(view -> {
 
@@ -504,9 +493,6 @@ public class FragmentBloodBanksList extends Fragment {
         filterDialog.getWindow().setAttributes(filterLayoutParams);
     }
 
-    private void resetValues() {
-        requestFilter = new BloodBankFilterItem().getFilter();
-    }
 
 
     private void get_some_data(final int what_data, final String id) {

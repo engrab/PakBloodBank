@@ -72,10 +72,6 @@ public class AdapterBloodDonors extends RecyclerView.Adapter<AdapterBloodDonors.
         final Donor donor = arrayListFiltered.get(position);
 
 
-        //Log.d("ArrayListDonor", arrayList.toString());
-        //VALUE OF DONORS AT HOME PAGE
-//        Log.d("Donor filter data", String.valueOf(donor));
-//      Log.d("Donor filter data", String.valueOf(donor.getFullName()));
 
 
 

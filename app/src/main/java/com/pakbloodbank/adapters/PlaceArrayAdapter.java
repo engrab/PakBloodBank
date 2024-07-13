@@ -59,9 +59,7 @@ public class PlaceArrayAdapter extends ArrayAdapter<AutocompletePrediction> impl
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//        View view = super.getView(position, convertView, parent);
-//        TypefaceHelper.typeface(view);
-//        return view;
+
 
         View view2 = super.getView(position, convertView, parent);
         AutocompletePrediction item = getItem(position);
@@ -88,17 +86,13 @@ public class PlaceArrayAdapter extends ArrayAdapter<AutocompletePrediction> impl
 
         final ArrayList<AutocompletePrediction> resultList = new ArrayList<>();
 
-        // Create a new token for the autocomplete session. Pass this to FindAutocompletePredictionsRequest,
-        // and once again when the user makes a selection (for example when calling fetchPlace()).
+
         AutocompleteSessionToken token = AutocompleteSessionToken.newInstance();
 
 
         // Use the builder to create a FindAutocompletePredictionsRequest.
         FindAutocompletePredictionsRequest request = FindAutocompletePredictionsRequest.builder()
-                // Call either setLocationBias() OR setLocationRestriction().
-                // .setLocationBias(bounds)
-//                .setLocationBias(mBounds)
-//                .setCountry(Constant.AutoCompleteCountries) // i.e. "pk"
+
                 .setTypeFilter(TypeFilter.ADDRESS)
                 .setTypeFilter(TypeFilter.GEOCODE)
                 .setTypeFilter(TypeFilter.CITIES)
@@ -120,13 +114,7 @@ public class PlaceArrayAdapter extends ArrayAdapter<AutocompletePrediction> impl
             FindAutocompletePredictionsResponse findAutocompletePredictionsResponse = autocompletePredictions.getResult();
             if (findAutocompletePredictionsResponse != null)
                 resultList.addAll(findAutocompletePredictionsResponse.getAutocompletePredictions());
-//                for (AutocompletePrediction prediction : findAutocompletePredictionsResponse.getAutocompletePredictions()) {
-//                    Log.i(TAG, prediction.getPlaceId());
-//                    Log.i(TAG, prediction.getPrimaryText(null).toString());
-//
-//                    resultList.add(prediction);
-//
-//                }
+
 
             return resultList;
         } else {
@@ -169,19 +157,4 @@ public class PlaceArrayAdapter extends ArrayAdapter<AutocompletePrediction> impl
         return filter;
     }
 
-//    public class PlaceAutocomplete {
-//
-//        public CharSequence placeId;
-//        public CharSequence description;
-//
-//        PlaceAutocomplete(CharSequence placeId, CharSequence description) {
-//            this.placeId = placeId;
-//            this.description = description;
-//        }
-//
-//        @Override
-//        public String toString() {
-//            return description.toString();
-//        }
-//    }
 }

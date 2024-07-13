@@ -90,9 +90,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements
     private String phone;
 
 
-    ArrayList<LanguageItem> languageItems;
-    String[] langNames = {};
-    int[] langFlags = {};
+
     boolean firstTime = false;
 
     PrefManager pref;
@@ -114,25 +112,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements
             onRestoreInstanceState(savedInstanceState);
         }
 
-
-        Methods methods = new Methods(PhoneAuthActivity.this);
-
         pref = new PrefManager(this);
-
-
-        languageItems = new ArrayList<>();
-
-        languageItems.add(new LanguageItem("English", R.drawable.english));
-
-
-        langNames = new String[languageItems.size()];
-        langFlags = new int[languageItems.size()];
-
-        for (int i = 0; i < languageItems.size(); i++) {
-            langNames[i] = languageItems.get(i).getName();
-            langFlags[i] = languageItems.get(i).getImage();
-        }
-
 
         mSignedInViews = findViewById(R.id.signedInButtons);
 
@@ -219,9 +199,6 @@ public class PhoneAuthActivity extends AppCompatActivity implements
         }
 
 
-//        spinner.post(new Runnable() {
-//            @Override
-//            public void run() {
         firstTime = false;
 
 
@@ -229,12 +206,6 @@ public class PhoneAuthActivity extends AppCompatActivity implements
 
     public static boolean isEmulator() {
 
-//		Log.d("EMULATOR", "FINGERPRINT: " + Build.FINGERPRINT);
-//		Log.d("EMULATOR", "MODEL: " +Build.MODEL);
-//		Log.d("EMULATOR", "MANUFACTURER: " +Build.MANUFACTURER);
-//		Log.d("EMULATOR", "BRAND: " +Build.BRAND);
-//		Log.d("EMULATOR", "PRODUCT: " +Build.PRODUCT);
-//		Log.d("EMULATOR", "DEVICE: " +Build.DEVICE);
 
         return Build.FINGERPRINT.startsWith("generic")
                 || Build.FINGERPRINT.startsWith("unknown")
@@ -534,11 +505,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements
         }
     }
 
-    private void showViews(View... views) {
-        for (View v : views) {
-            v.setVisibility(View.VISIBLE);
-        }
-    }
+
 
     private void disableViews(View... views) {
         for (View v : views) {
@@ -546,11 +513,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements
         }
     }
 
-    private void hideViews(View... views) {
-        for (View v : views) {
-            v.setVisibility(View.INVISIBLE);
-        }
-    }
+
 
     @Override
     public void onClick(View view) {
@@ -580,9 +543,5 @@ public class PhoneAuthActivity extends AppCompatActivity implements
         }
     }
 
-    private void initSpinnerAdapters(String[] array, Spinner spinner) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(PhoneAuthActivity.this, android.R.layout.simple_spinner_item, array);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-    }
+
 }

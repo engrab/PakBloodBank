@@ -20,27 +20,12 @@ public class PrefManager {
 
     public PrefManager(Context context) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-//        sharedPreferences = context.getSharedPreferences("setting", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
 
-    public Boolean getIsNotification() {
-        return sharedPreferences.getBoolean("noti", true);
-    }
 
-    public void setIsNotification(Boolean isNotification) {
-        editor.putBoolean("noti", isNotification);
-        editor.apply();
-    }
 
-    public Boolean getIsConsent() {
-        return sharedPreferences.getBoolean("consent", true);
-    }
 
-    public void setIsConsent(Boolean isConsent) {
-        editor.putBoolean("consent", isConsent);
-        editor.apply();
-    }
 
     public String getPhoneNumber() {
         if (Methods.isEmulator()) {
@@ -97,9 +82,6 @@ public class PrefManager {
         return sharedPreferences.getString("language", "en");
     }
 
-    public void setAppLanguage(String lang) {
-        editor.putString("language", lang).apply();
-    }
 
 
 

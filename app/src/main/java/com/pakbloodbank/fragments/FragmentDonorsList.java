@@ -442,10 +442,6 @@ public class FragmentDonorsList extends Fragment {
 
 
             final Button    submit = filterDialog.findViewById(R.id.submit);
-//            final ImageView close  = filterDialog.findViewById(R.id.bt_close);
-
-
-//            close.setOnClickListener(v -> filterDialog.dismiss());
 
 
             submit.setOnClickListener(view -> {
@@ -460,16 +456,12 @@ public class FragmentDonorsList extends Fragment {
 
         public void initFilterDialogItems() {
 
-    //        Log.d( "initFilterDialogItems: ", String.valueOf(countriesArrayList));
-    //        Log.d( "initFilterDialogItemsBefore: ", String.valueOf(countriesArrayList.size()));
-
             if (countriesArrayList.size() == 0) {
                 get_some_data(COUNTRIES_LIST, null);
                 new Handler().postDelayed(() -> initFilterDialogItems(), 3000);
                 return;
             }
 
-            //Log.d( "initFilterDialogItemsAfter: ", String.valueOf(countriesArrayList.size()));
 
 
 
@@ -480,16 +472,10 @@ public class FragmentDonorsList extends Fragment {
                     filterDialog = new Dialog(context);
                 } else
                 {
-    //                Log.d("isAttached else 1", String.valueOf(isAttached));
-    //                new Handler().postDelayed(() -> {
-    //                    if (isAttached) {
-    //                        Log.d("isAttached else", String.valueOf(isAttached));
                                 Toast.makeText(context, "Fragment Not Attached", Toast.LENGTH_SHORT).show();
-    //                    }
-    //                }, 200); // Adjust the delay as needed
+
                 }
 
-                //filterDialog = new Dialog(getContext());
 
                 if (!isRequsetFeatureCalled) {
                     filterDialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
@@ -548,14 +534,6 @@ public class FragmentDonorsList extends Fragment {
             orderByList.add(context.getString(R.string.recent));
             orderByList.add(context.getString(R.string.popular));
 
-    //        orderByList.clear();
-    //        orderByList.add(getActivity().getResources().getString(R.string.none));
-    //        orderByList.add(getActivity().getResources().getString(R.string.a_to_z));
-    //        orderByList.add(getActivity().getResources().getString(R.string.z_to_a));
-    //        orderByList.add(getActivity().getResources().getString(R.string.nearby_you));
-    //        orderByList.add(getActivity().getResources().getString(R.string.recent));
-    //        orderByList.add(getActivity().getResources().getString(R.string.popular));
-
 
 
 
@@ -568,10 +546,6 @@ public class FragmentDonorsList extends Fragment {
 
 
 
-//            CustomAdapterSpinner countryAdapter=new CustomAdapterSpinner(countriesNameList,activity);
-//            countrySpinner.setAdapter(countryAdapter);
-//            countrySpinner.setEnabled(true);
-
 
 
             Log.d("CountriesNameList", String.valueOf(countriesNameList));
@@ -579,96 +553,6 @@ public class FragmentDonorsList extends Fragment {
 
             stateSpinner.setEnabled(false);
             citySpinner.setEnabled(false);
-
-
-////
-//            countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                        @Override
-//                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                            Log.d("Position before if", "Selected Position: " + countrySpinner.getSelectedItemPosition());
-//
-//
-//                            //String selectedCountry = parent.getItemAtPosition(position).toString();
-//
-//                            String selectedCountry = (String) countrySpinner.getSelectedItem();
-//
-//                            if (position == 0) {
-//                                Log.d("Position 0 selected", "Selected Position: " + countrySpinner.getSelectedItemPosition());
-//                                Log.d("Position 0 selected ", countriesArrayList.get(position).getId());
-//                                //((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.black));
-//                                ////                    ((TextView) parent.getChildAt(0)).setTextSize(14);
-//                                //donorFilterItem.setCountry(countriesArrayList.get((countrySpinner.getSelectedItemPosition() )).getId());
-//                                //donorFilterItem.setCountry(countriesArrayList.get(position).getId());
-//                                //donorFilterItem.setCountry(selectedCountry);
-//
-//
-//                                selectedCountryid="";
-//                                if (selectedCountry != null) {
-//                                    int selectedCountryPosition = countrySpinner.getSelectedItemPosition();
-//
-//                                    if (selectedCountryPosition >= 0) {
-//                                        donorFilterItem.setCountry(countriesArrayList.get(selectedCountryPosition).getId());
-//                                    } else {
-//                                        donorFilterItem.setCountry("");
-//                                    }
-//                                } else {
-//                                    donorFilterItem.setCountry("");
-//                                }
-//                                Log.d("DonorFilterItem: ", String.valueOf(donorFilterItem));
-//                                //Log.d("CountriesArrayList", String.valueOf(countriesArrayList));
-//
-//
-//
-//
-//                                //donorFilterItem.setCountry("");
-//                                donorFilterItem.setState("");
-//                                donorFilterItem.setCity("");
-//
-//
-//                                get_some_data(STATES_LIST, donorFilterItem.getCountry());
-//
-//                            }
-//                            //
-//
-//                            else {
-//
-//
-//                                Log.d("Position ", "Selected Position: " + countrySpinner.getSelectedItemPosition());
-//                                //                    Log.d("Position ", "Selected Position: " + countrySpinner.getSelectedItem());
-//                                Log.d("Position ", String.valueOf(position));
-//                                //donorFilterItem.setCountry(countriesArrayList.get((countrySpinner.getSelectedItemPosition() )).getId());
-//
-//                                // donorFilterItem.setCountry(countriesArrayList.get((position - 1)).getId());
-//                                if (selectedCountry != null) {
-//                                    int selectedCountryPosition = countrySpinner.getSelectedItemPosition();
-//
-//                                    if (selectedCountryPosition >= 0) {
-//                                        donorFilterItem.setCountry(countriesArrayList.get(selectedCountryPosition - 1).getId());
-//                                    } else {
-//                                        donorFilterItem.setCountry("");
-//                                    }
-//                                } else {
-//                                    donorFilterItem.setCountry("");
-//                                }
-//                                Log.d("DonorFilterItem: ", String.valueOf(donorFilterItem));
-//
-//                                donorFilterItem.setState("");
-//                                donorFilterItem.setCity("");
-//                                get_some_data(STATES_LIST, donorFilterItem.getCountry());
-//                            }
-//
-//
-//
-//
-//
-//                        }
-//
-//                        @Override
-//                        public void onNothingSelected(AdapterView<?> parent) {
-//
-//                        }
-//                    });
-
 
             countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -844,133 +728,6 @@ public class FragmentDonorsList extends Fragment {
                     donorFilterItem.setCity("");
                 }
             });
-//            stateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                @Override
-//                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                    //String selectedState = parent.getItemAtPosition(position).toString();
-//                    String selectedState = (String) stateSpinner.getSelectedItem();
-//
-//                    int selectedCountryPosition = countrySpinner.getSelectedItemPosition(); // Get the selected country position
-//
-//                    Log.d("CountrySpinner", "Selected Position: " + position);
-//
-//                        if (position == 0) {
-//                            Log.d("Position ", "Selected Position: " + stateSpinner.getSelectedItemPosition());
-//
-//
-//                            if (selectedState != null) {
-//                                int selectedStatePosition = stateSpinner.getSelectedItemPosition();
-//
-//                                if (selectedCountryPosition >= 0) {
-//                                    donorFilterItem.setState(statesArrayList.get(selectedStatePosition).getId());
-//                                } else {
-//                                    donorFilterItem.setState("");
-//                                }
-//                            } else {
-//                                donorFilterItem.setState("");
-//                            }
-//                            //donorFilterItem.setState(selectedState);
-//                            //                    donorFilterItem.setState("");
-//                            donorFilterItem.setCity("");
-//                            get_some_data(CITIES_LIST, donorFilterItem.getState());
-//
-//                        } else {
-//                            Log.d("Position ", "Selected Position: " + stateSpinner.getSelectedItemPosition());
-//
-//                            //                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.black));
-//                            //                    ((TextView) parent.getChildAt(0)).setTextSize(14);
-//                            // donorFilterItem.setState(statesArrayList.get((stateSpinner.getSelectedItemPosition() - 1)).getId());
-//                            //String selectedState= statesArrayList.get(position - 1).getId();
-//
-//
-//                            if (selectedState != null) {
-//                                int selectedStatePosition = stateSpinner.getSelectedItemPosition();
-//
-//                                if (selectedCountryPosition >= 0) {
-//                                    donorFilterItem.setState(statesArrayList.get(selectedStatePosition - 1).getId());
-//                                } else {
-//                                    donorFilterItem.setState("");
-//                                }
-//                            } else {
-//                                donorFilterItem.setState("");
-//                            }
-//                            // donorFilterItem.setState(selectedState);
-//                            donorFilterItem.setCity("");
-//
-//                            get_some_data(CITIES_LIST, donorFilterItem.getState());
-//                        }
-//
-//
-//                }
-//
-//                @Override
-//                public void onNothingSelected(AdapterView<?> parent) {
-//
-//                }
-//            });
-//
-//            citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                @Override
-//                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                    //String selectedCity = parent.getItemAtPosition(position).toString();
-//                    String selectedCity = (String) countrySpinner.getSelectedItem();
-//
-//                    int selectedCountryPosition = countrySpinner.getSelectedItemPosition(); // Get the selected country position
-//
-//
-//
-//
-//                        if (position == 0) {
-//                            //                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.black));
-//                            //                    ((TextView) parent.getChildAt(0)).setTextSize(14);
-//                            //String selectedCity=citiesArrayList.get(position).getId() ;
-//                            //donorFilterItem.setCity(selectedCity);
-//
-//
-//                            if (selectedCity != null) {
-//                                int selectedCityPosition = citySpinner.getSelectedItemPosition();
-//
-//                                if (selectedCountryPosition >= 0) {
-//                                    donorFilterItem.setCity(citiesArrayList.get(selectedCityPosition).getId());
-//                                } else {
-//                                    donorFilterItem.setCity("");
-//                                }
-//                            } else {
-//                                donorFilterItem.setCity("");
-//                            }
-//                            //donorFilterItem.setCity(citiesArrayList.get((position )).getId());
-//                            //                    donorFilterItem.setCity("");
-//
-//                        } else {
-//                            //                    ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.black));
-//                            //                    ((TextView) parent.getChildAt(0)).setTextSize(14);
-//                            //String selectedCity=citiesArrayList.get(position -1).getId() ;
-//                            //donorFilterItem.setCity(selectedCity);
-//                            if (selectedCity != null) {
-//                                int selectedCityPosition = citySpinner.getSelectedItemPosition();
-//
-//                                if (selectedCountryPosition >= 0) {
-//                                    donorFilterItem.setCity(citiesArrayList.get(selectedCityPosition - 1).getId());
-//                                } else {
-//                                    donorFilterItem.setCity("");
-//                                }
-//                            } else {
-//                                donorFilterItem.setCity("");
-//                            }
-//
-//                            //donorFilterItem.setCity(citiesArrayList.get((position - 1)).getId());
-//                        }
-//
-//
-//                }
-//
-//                @Override
-//                public void onNothingSelected(AdapterView<?> parent) {
-//
-//                }
-//            });
-
 
 
 
@@ -1177,10 +934,7 @@ public class FragmentDonorsList extends Fragment {
             });
         }
     
-        private void resetValues() {
-            donorFilterItem = new DonorFilterItem().getFilter();
-        }
-    
+
     
         private void get_some_data(final int what_data, final String id) {
 
@@ -1226,17 +980,7 @@ public class FragmentDonorsList extends Fragment {
                             initFilterDialogItems();
 
 
-//
-//                        new Handler().postDelayed(() -> {
-//                            if (countryId != null) {
-//                                countrySpinner.setSelectionM(selectedCountryPosition);
-//                            }
-//                        }, 1000);
-//
-//
-//                        if (countryId != null) {
-//                            get_some_data(STATES_LIST, countryId, countryId, stateId, cityId);
-//                        }
+
 
 
 
@@ -1260,20 +1004,6 @@ public class FragmentDonorsList extends Fragment {
                                 statesArrayList) {
                             statesNameList.add(s.getName());
                         }
-//                        statesArrayList = gson.fromJson(states.toString(), states_type);
-//                        selectedStatePosition = 0;
-//                        for (int i = 0; i < statesArrayList.size(); i++) {
-//                            States s = statesArrayList.get(i);
-//                            statesNameList.add(s.getName());
-//
-//                            if (stateId != null) {
-//                                if (s.getId().equalsIgnoreCase(stateId)) {
-//                                    selectedStatePosition = i;
-//                                }
-//                            }
-//                        }
-    
-                        //Log.d("StatesNameListAfter", String.valueOf(statesNameList));
 
 
                                 ArrayAdapter<String> states_adapter = new ArrayAdapter<>(activity, R.layout.spinner, statesNameList);
@@ -1283,18 +1013,7 @@ public class FragmentDonorsList extends Fragment {
 
                         stateSpinner.setEnabled(true);
 
-//                        new Handler().postDelayed(() -> {
-//                            if (stateId != null) {
-//                                stateSpinner.setSelectionM(selectedStatePosition);
-//                            }
-//                        }, 1000);
-//
-//
-//                        if (stateId != null) {
-//                            get_some_data(CITIES_LIST, stateId, countryId, stateId, cityId);
-//                        }
 
-//
                     } else if (what_data == CITIES_LIST) {
     
                         citiesArrayList.clear();
@@ -1312,17 +1031,6 @@ public class FragmentDonorsList extends Fragment {
                                 citiesArrayList) {
                             citiesNameList.add(c.getName());
                         }
-////
-//                        selectedCityPosition = 0;
-//                        for (int i = 0; i < citiesArrayList.size(); i++) {
-//                            Cities c = citiesArrayList.get(i);
-//                            citiesNameList.add(c.getName());
-//                            if (cityId != null) {
-//                                if (c.getId().equalsIgnoreCase(cityId)) {
-//                                    selectedCityPosition = i;
-//                                }
-//                            }
-//                        }
 
                                 ArrayAdapter<String> cities_adapter = new ArrayAdapter<>(activity, R.layout.spinner, citiesNameList);
                                 cities_adapter.setDropDownViewResource(R.layout.spinner);
@@ -1332,16 +1040,7 @@ public class FragmentDonorsList extends Fragment {
                         citySpinner.setEnabled(true);
 
 
-//                        new Handler().postDelayed(() -> {
-//                            if (cityId != null) {
-//                                citySpinner.setSelectionM(selectedCityPosition);
-//                            }
-//                        }, 1000);
-//
-//                        if (citiesNameList.size() == 1) {
-//                            citySpinner.setSelectionM(0);
-//                        }
-//
+
                     }
     
                 } catch (JSONException e) {
@@ -1372,22 +1071,6 @@ public class FragmentDonorsList extends Fragment {
 
 
 
-    private void showProgressDialog() {
-        if (progressDialog == null) {
-            progressDialog = new ProgressDialog(activity);
-            progressDialog.setMessage("Loading states...");
-            progressDialog.setCanceledOnTouchOutside(false);
-            progressDialog.show();
-        }
-    }
-
-    // Method to dismiss the progress dialog
-    private void dismissProgressDialog() {
-        if (progressDialog != null && progressDialog.isShowing()) {
-            progressDialog.dismiss();
-            progressDialog = null;
-        }
-    }
   }
 
 

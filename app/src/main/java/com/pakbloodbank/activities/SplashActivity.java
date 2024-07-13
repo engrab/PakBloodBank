@@ -77,7 +77,7 @@
             } else {
                 Constant.showNoNetwork(this);
             }
-//            checkPermissions(false);
+
 
 
             setRegisteredHandler();
@@ -89,28 +89,16 @@
                 @Override
                 public void run() {
                     if (checkRegistration) {
-//                        //testing
-//                        pref.setPhoneNumber("03477141224");
 
                         isMobileRegistered(pref.getPhoneNumber());
                     }
-                    else {
-//                        new Handler().postDelayed(this, delay);
-                    }
+
                 }
             }, delay);
         }
 
 
-//        @Override
-//        protected void onResume() {
-//            super.onResume();
-//            if (Methods.check_internet(this)) {
-//                if (Methods.check_gps(this)) {
-//                    checkPermissions(true);
-//                }
-//            }
-//        }
+
 
 
 
@@ -143,14 +131,7 @@
             }).check();
         }
 
-        private void gotoHome() {
-            new Handler().postDelayed(() -> {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }, 100);
 
-        }
 
         private void isMobileRegistered(final String mobile) {
 
@@ -187,8 +168,6 @@
 
                                     } else {
 
-//                                        // testing
-//                                        gotoHome();
                                         gotoPhoneAuthActivity(true, ob.toString());
 
                                     }
@@ -201,8 +180,6 @@
                                     JSONObject ob = obj.getJSONObject("user_data");
                                     pref.saveUserData(ob.toString());
 
-//                                    // testing
-//                                    gotoHome();
 
                                     gotoPhoneAuthActivity(true, ob.toString());
 
@@ -236,5 +213,14 @@
             intent.putExtra("user_data", object);
             startActivity(intent);
             finish();
+        }
+
+        private void gotoHome() {
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }, 100);
+
         }
     }

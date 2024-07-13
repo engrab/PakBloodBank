@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity
 
         bottomNavView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-//        setupDrawerNavigation(toolbar);
 
 
         loadDonorHome();
@@ -155,15 +154,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-//    private void setupDrawerNavigation(Toolbar toolbar) {
-//        DrawerLayout   drawer         = findViewById(R.id.drawer_layout);
-//        NavigationView navigationView = findViewById(R.id.nav_view);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.addDrawerListener(toggle);
-//        toggle.syncState();
-//        navigationView.setNavigationItemSelectedListener(this);
-//    }
+
 
     private void get_user_data() {
         pref = new PrefManager(this);
