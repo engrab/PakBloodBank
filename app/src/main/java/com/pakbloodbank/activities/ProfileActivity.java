@@ -168,67 +168,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 user_id = user.getString("id");
                 phoneNum = user.getString("mobile");
-
-                if (getIntent().getBooleanExtra("update", false)){
-
-                    nameEt.setText(user.getString("name"));
-                    addressEt.setText(user.getString("address"));
-                    phoneEt.setText(phoneNum);
-//                    dobEt.setText(user.getString("date_of_birth"));
-//                    citySpinner.setSelection(citiesNameList.indexOf(user.getString("city")));
-//                    stateSpinner.setSelection(statesNameList.indexOf(user.getString("state")));
-//                    countrySpinner.setSelection(countriesNameList.indexOf(user.getString("country")));
-//                    bloodGroupSpinner.setSelection(Arrays.asList(bloodArray).indexOf(user.getString("blood_group")));
-//                    passwordEt.setText(user.getString("password"));
-//                    saveBtn.setText("Update");
-//
-//                    if (!progress.isShowing()) {
-//                        progress.show();
-//                    }
-//
-//                    new Handler().postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            get_some_data(COUNTRIES_LIST, null);
-//                            String country = null;
-//                            try {
-//                                country = user.getString("country");
-//                            } catch (JSONException e) {
-//                                throw new RuntimeException(e);
-//                            }
-//                            int countryIndex = countriesNameList.indexOf(country)-1;
-//                            countrySpinner.setSelection(countryIndex);
-//
-//                            get_some_data(STATES_LIST, countriesNameList.get(countryIndex));
-//                            String state = null;
-//                            try {
-//                                state = user.getString("state");
-//                            } catch (JSONException e) {
-//                                throw new RuntimeException(e);
-//                            }
-//                            int stateIndex = statesNameList.indexOf(state)-1;
-//                            stateSpinner.setSelection(stateIndex);
-//
-//
-//
-//                            get_some_data(CITIES_LIST, statesNameList.get(stateIndex));
-//                            String city = null;
-//                            try {
-//                                city = user.getString("city");
-//                            } catch (JSONException e) {
-//                                throw new RuntimeException(e);
-//                            }
-//                            int cityIndex = citiesNameList.indexOf(city)-1;
-//                            citySpinner.setSelection(cityIndex);
-//                        }
-//                    },5000);
-//
-//
-//                    if (progress.isShowing()) {
-//                        progress.dismiss();
-//                    }
-
-                }
+                phoneEt.setText(phoneNum);
 
 
             } catch (JSONException e) {
