@@ -40,6 +40,7 @@
 
         private PrefManager pref;
         boolean checkRegistration = false;
+        Methods methods;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,8 @@
             }
 
 
-            Methods methods = new Methods(SplashActivity.this);
+
+            methods = new Methods(SplashActivity.this);
 
             pref = new PrefManager(this);
 
@@ -66,35 +68,21 @@
 
 
 
-            if (methods.isNetworkAvailable()) {
-
-                if (Methods.check_internet(this)) {
-                    if (Methods.check_gps(this)) {
-                        checkPermissions(true);
-                    }
 
 
-                }
-
-            } else {
-                Constant.showNoNetwork(this);
-            }
-
-
-
-            setRegisteredHandler();
 
 
         }
 
         private void setRegisteredHandler() {
-            final int delay = 200;
+            final int delay = 2000;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     if (checkRegistration) {
 
                         isMobileRegistered(pref.getPhoneNumber());
+
                     }
 
                 }
@@ -103,7 +91,32 @@
 
 
 
+        @Override
+        protected void onResume() {
+            super.onResume();
 
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (methods.isNetworkAvailable()) {
+
+                        if (Methods.check_internet(SplashActivity.this)) {
+                            if (Methods.check_gps(SplashActivity.this)) {
+                                checkPermissions(true);
+                            }else {
+                                Toast.makeText(SplashActivity.this, "Allow Location Permission from AppInfo", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+
+                    } else {
+                        Constant.showNoNetwork(SplashActivity.this);
+                    }
+                }
+            }, 2000);
+
+
+        }
 
 
         private void checkPermissions(final boolean checkNextAction) {
@@ -119,6 +132,7 @@
                     if (report.areAllPermissionsGranted()) {
                         if (checkNextAction) {
                             checkRegistration = true;
+                            setRegisteredHandler();
                         } else {
                             checkRegistration = false;
                         }
